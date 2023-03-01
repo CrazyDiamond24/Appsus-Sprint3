@@ -28,6 +28,15 @@ li {
 
 .delete-note-btn {
     background-color: coral;
-    margin-block-start: auto;
 
 }
+
+.control-btns {
+    margin-block-start: auto;
+    display: flex;
+}
+
+.color-picker {
+    display: none;
+}
+  

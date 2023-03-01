@@ -8,8 +8,13 @@ export default {
     <ul class="note-list">
       <li v-for="note in notes" :key="note.id" :style="note.style">
         <NotePreview :note="note" />
-        <button title="Delete" class="delete-note-btn" @click="remove(note.id)">x</button>
-        <input type="color" title="Change color" class="change-color-btn" @input="changeColor(note)">
+        <div class="control-btns">
+          <button title="Delete" class="delete-note-btn" @click="remove(note.id)">x</button>
+          <button title="Change color" @click="openColorPicker(note)">
+            Clr
+          </button>
+          <input type="color" class="color-picker" v-model="selectedColor" @input="changeColor(note)" hidden>
+        </div>
       </li>
     </ul>
   </section>
@@ -18,6 +23,7 @@ export default {
     return {
       pinnedNotes: [],
       unPinnedNotes: [],
+      selectedColor: '',
     }
   },
   methods: {
@@ -25,10 +31,15 @@ export default {
     remove(noteId) {
       this.$emit('remove', noteId)
     },
-    changeColor(note) {
-      note.style.backgroundColor = event.target.value
-      keepService.update(note)
-    },
+    openColorPicker(note) {
+        this.selectedColor = note.style.backgroundColor
+        const input = event.target.nextElementSibling
+        input.click()
+      },
+      changeColor(note) {
+        note.style.backgroundColor = this.selectedColor
+        keepService.update(note)
+      },
   },
   components: {
     NotePreview,

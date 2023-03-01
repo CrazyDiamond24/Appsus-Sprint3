@@ -1,8 +1,15 @@
 export default {
-    template: `
-        <section>
-            <h2>Home</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis enim rem porro delectus. Quos expedita ipsam repellendus voluptas quas, nam ea eligendi veniam ullam, modi impedit eveniet quia quaerat molestias?</p>
-        </section>
+  name: 'NoteDetails',
+  props: ['id'],
+  template: `
+      <section>
+        <h2>Details</h2>
+        <p>Details about note {{ id }}</p>
+      </section>
     `,
+  computed: {
+    noteId() {
+      return this.$route.params.id
+    },
+  },
 }

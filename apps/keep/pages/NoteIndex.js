@@ -7,6 +7,7 @@ export default {
   name: 'noteIndex',
   template: `
     <section class="note-index">
+    <router-view></router-view>
     <AddNote @add="addNote"/>
       <section class="notes" v-if="pinnedNotes.length">
         <h2>Pinned Notes:</h2>

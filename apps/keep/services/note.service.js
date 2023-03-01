@@ -10,7 +10,6 @@ export const keepService = {
   addNote,
   copyNote,
   postNote,
-  
 }
 
 _createNotes()
@@ -101,7 +100,6 @@ function _createNote(type, setting) {
   return newNote
 }
 
-
 //all properties except for ID
 function copyNote(note) {
   const newNote = {
@@ -110,11 +108,11 @@ function copyNote(note) {
     type: note.type,
     isPinned: note.isPinned,
     style: {
-      backgroundColor: note.style.backgroundColor
+      backgroundColor: note.style.backgroundColor,
     },
-    info: {}
+    info: {},
   }
-  
+
   switch (note.type) {
     case 'NoteTxt':
       newNote.info.txt = note.info.txt
@@ -124,9 +122,6 @@ function copyNote(note) {
       newNote.info.url = note.info.url
       break
   }
-  
+
   return newNote
 }
-
-
-

@@ -2,7 +2,10 @@ export const utilService = {
     makeId,
     saveToStorage,
     loadFromStorage,
-    animateCSS
+    animateCSS,
+    randSender,
+    makeLorem,
+    randStatus
 }
 
 
@@ -41,3 +44,25 @@ function animateCSS(el, animation) {
       el.addEventListener('animationend', handleAnimationEnd, { once: true })
     })
   }
+
+function randSender() {
+    const senders = ['Netflix', 'Youtube', 'Github', 'MetaMask', 'Getin', 'Dropbox', 'Binance', 'Yaron Biton', 'Almog Ohayon', 'Pango', 'Rania Elizabeth Kittan', 'Google Play','Font Awesome',
+'Facebook','Instagram']
+
+    return senders[Math.floor(Math.random() * senders.length)]
+}
+
+function makeLorem(length = 10) {
+  const words = ["The sky", "above", "the port", "was", "the color of television", "tuned", "to", "a dead channel", ".", "All", "this happened", "more or less", ".", "I", "had", "the story", "bit by bit", "from various people", "and", "as generally", "happens", "in such cases", "each time", "it", "was", "a different story", ".", "It", "was", "a pleasure", "to", "burn"]
+
+  var sentence = ""
+  while (length--) {
+      sentence += words[Math.floor(Math.random() * words.length)] + " "
+  }
+  return sentence
+}
+
+function randStatus(){
+  const states = ['Inbox', 'Sent', 'Drafts', 'Trash', 'All']
+  return states[Math.floor(Math.random() * states.length)]
+}

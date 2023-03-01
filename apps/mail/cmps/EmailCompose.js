@@ -1,16 +1,17 @@
-import { emailService } from "../services/email.service.js"
+import { emailService } from './../services/email.service.js'
+import { eventBus } from './../../../services/event-bus.service.js'
 
 export default {
-    name: 'EmailCompose',
+    name: 'emailCompose',
     template: `
     <button @click="openModal">Compose</button>
     <form class="email-compose-container" v-show='this.isActivated'>
-        <header>New Message <div class="close-compose" @click="closeModal">x</div></header>
-        <div class="secondary-content">
+        <header>New Message <div class="email-compose-close" @click="saveInDrafts">x</div></header>
+        <div class="email-compose-body">
             <input type="text" placeholder="To" v-model="newEmail.to">
             <input type="text" placeholder="Subject" v-model="newEmail.subject">
-            <input type="text" v-model="newEmail.body">
-            <button @click="addMail">Send</button>
+            <input type="text" v-model="newEmail.body" class="email-compose-body-input">
+            <button @click="addMail" class="email-compose-send-btn">Send</button>
         </div>
     </form>
     `,
@@ -33,17 +34,17 @@ export default {
             }
         },
         openModal() {
-            //setNewEmptyEmail()
+            this.setNewEmptyEmail()
             this.isActivated = true
         },
         closeModal() {
             this.isActivated = false
         },
         setNewEmptyEmail() {
-            emailService.getEmptyEmail().then(res => this.newEmail = res)
+            this.newEmail = emailService.getEmptyEmail()
         },
         addMail(){
-            closeModal()
+            this.closeModal()
             this.newEmail.isSent = true
             this.newEmail.isDraft = false
             this.newEmail.sentAt = Date.now()
@@ -58,6 +59,7 @@ export default {
             this.newEmail.isSent = false
             this.newEmail.isDraft = true
             console.log('TODO save in drafts') /*************************TODO************************** */
+            this.closeModal()
         }
     },
 }

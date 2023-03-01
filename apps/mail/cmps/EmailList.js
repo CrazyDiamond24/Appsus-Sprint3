@@ -7,16 +7,43 @@
     `,
 }*/
 
+import emailPreview from './EmailPreview.js'
+
 export default {
-    template: `
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
-        <h3>Email</h3>
+    name: 'emailList',
+    props: ['emails'],
+    template:`
+        <section class="email-list-main">
+
+            <div class="email-list-search">
+                <!-- TODO: svg here search icon -->
+                <input @input="filterByTxt" v-model="filterBy" class="form-control" type="text" placeholder="Search mail">
+            </div>
+            
+        <ul>
+            <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >
+                <email-preview :email="email" @remove="deleteEmail"/>
+            </li>
+        </ul>
+        </section>
     `,
+    data(){
+        return{
+            filterBy: '',   
+        }
+    },
+    methods: {
+        select(emailId) {
+            this.$router.push('/email/'+ emailId)
+        },
+        deleteEmail(emailId){
+            this.$emit('remove', emailId)
+        },
+        filterByTxt(){
+            this.$emit('filterByTxt', this.filterBy)
+        },
+    },
+    components: {
+        emailPreview,
+    },
 }

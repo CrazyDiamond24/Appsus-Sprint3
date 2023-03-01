@@ -1,0 +1,76 @@
+.email-compose-container {
+    width: 478px;
+    height: 432px;
+    position: fixed;
+    right: 4.5rem;
+    bottom: 0;
+    font-size: .875rem;
+
+    box-shadow: 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
+}
+
+.email-compose-container header {
+    border-radius: 8px 8px 0 0;
+    letter-spacing: .2px;
+    font-family: Verdana;
+    padding-inline: 1rem;
+    padding-block: 0.625rem;
+    background-color: #dce2eb;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email-compose-body {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    font-family: Verdana;
+}
+
+.email-compose-body input {
+    padding-block: .5rem;
+
+    border: none;
+    border-bottom: .5px solid #eceff1;
+}
+
+.email-compose-body input::placeholder {
+    font-size: .875rem;
+}
+
+.email-compose-body-input {
+    height: 16.5rem;
+}
+
+.email-compose-body input:focus {
+    outline: none;
+}
+
+.email-compose-send-btn {
+    background-color: #1a73e8;
+    border: none;
+    height: 2.25rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.email-compose-send-btn:hover {
+    background-color: #297be6;
+    outline: 1px solid transparent;
+}
+
+.email-compose-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.email-compose-close:hover{
+    background-color: rgba(255, 255, 255, 0.445);
+}

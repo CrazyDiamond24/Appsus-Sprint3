@@ -2,9 +2,9 @@ export default {
   props: ['info'],
   template: `
     <div class="note-txt">
-        <pre class="txt">
+        <p class="txt">
             {{info.txt}}
-        </pre>
+        </p>
     </div>
 `,
   data() {

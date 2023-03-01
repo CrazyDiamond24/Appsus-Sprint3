@@ -8,7 +8,7 @@ export default {
     props: ['note'],
     template: `
     <div @click="onSelectNote(note.id)" class="note-preview">
-    <h3  class="title">{{note.title}}</h3>
+    <h3 class="title">{{note.info.title}}</h3>
     <Component :is="note.type" :info="note.info" ></Component>
 </div>
     `,

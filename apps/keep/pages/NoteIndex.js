@@ -1,5 +1,6 @@
 import { keepService } from '../services/note.service.js'
 import NoteList from '../cmps/NoteList.js'
+import AddNote from '../cmps/AddNote.js'
 
 export default {
   template: `
@@ -10,14 +11,34 @@ export default {
       </section>
       <section class="notes" v-if="unPinnedNotes.length">
         <h2>Notes:</h2>
-        <NoteList :notes="unPinnedNotes" />
+        <NoteList :notes="unPinnedNotes"
+         @remove="removeNote" />
       </section>
+      <AddNote @add="addNote"/>
     </section>
   `,
   data() {
     return {
       notes: [],
     }
+  },
+  methods: {
+    addNote(newNote) {
+      keepService.addNote(newNote).then(() => {
+        console.log(newNote)
+      })
+    },
+    removeNote(noteId) {
+      keepService
+        .remove(noteId)
+        .then(() => {
+          const idx = this.notes.findIndex((note) => note.id === noteId)
+          this.notes.splice(idx, 1)
+        })
+        .catch((err) => {
+          console.log('err')
+        })
+    },
   },
   created() {
     keepService.query().then((notes) => {
@@ -34,6 +55,6 @@ export default {
   },
   components: {
     NoteList,
+    AddNote,
   },
 }
-

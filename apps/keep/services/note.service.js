@@ -6,6 +6,7 @@ const KEEP_KEY = 'notesDB'
 export const keepService = {
     query,
     remove,
+    update,
 }
 
 _createNotes()
@@ -25,6 +26,10 @@ function query() {
 
 function remove(noteId) {
   return storageService.remove(KEEP_KEY, noteId)
+}
+
+function update(note) {
+  return storageService.put(KEEP_KEY, note)
 }
 
 function _createNotes() {

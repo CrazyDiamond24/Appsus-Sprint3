@@ -1,8 +1,75 @@
-export default {
-    template: `
-        <section>
-            <h2>Home</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis enim rem porro delectus. Quos expedita ipsam repellendus voluptas quas, nam ea eligendi veniam ullam, modi impedit eveniet quia quaerat molestias?</p>
-        </section>
-    `,
+import { storageService } from '../../../services/async-storage.service.js'
+import { utilService } from './../../../services/util.service.js'
+
+const KEEP_KEY = 'notesDB'
+
+export const keepService = {
+    query,
+    remove,
+    update,
 }
+
+_createNotes()
+
+
+
+function query() {
+  return storageService.query(KEEP_KEY).then((notes) => {
+    if (!notes.length) {
+      const defNotes = createNotes
+      storageService.post(KEEP_KEY, defNotes)
+      return defNotes
+    }
+    return notes
+  })
+}
+
+function remove(noteId) {
+  return storageService.remove(KEEP_KEY, noteId)
+}
+
+function update(note) {
+  return storageService.put(KEEP_KEY, note)
+}
+
+function _createNotes() {
+  let notes = utilService.loadFromStorage(KEEP_KEY)
+  if (!notes || !notes.length) {
+    notes = [
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteTxt',
+        isPinned: false,
+        style: {
+          backgroundColor: '#f5ee9e',
+        },
+        info: {
+          txt: 'Anxiety attacks are real!',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#f5ee9e',
+        },
+        info: {
+          url: 'https://lp-cms-production.imgix.net/image_browser/Amsterdam%201.jpg',
+          title: 'vacation',
+        },
+      },
+    ]
+
+    utilService.saveToStorage(KEEP_KEY, notes)
+  }
+  return notes
+}
+// function addNote(note) {
+//     const newNote = _CreateNote(note.type, note.info);
+//     return storageService.post(KEEP_KEY, newNote)
+//         .then(note => note);
+// }
+

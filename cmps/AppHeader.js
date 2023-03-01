@@ -13,7 +13,7 @@ export default {
             routes: [
                  {path:'/', title:'Home'},
                  {path:'/notes', title:'Notes'},
-                 {path:'/mail', title:'Mail'},
+                 {path:'/email/list', title:'E-mail'},
              ]
      
          }

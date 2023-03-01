@@ -1,8 +1,39 @@
+import { keepService } from '../services/note.service.js'
+import NoteList from '../cmps/NoteList.js'
+
 export default {
-    template: `
-        <section>
-            <h2>Home</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis enim rem porro delectus. Quos expedita ipsam repellendus voluptas quas, nam ea eligendi veniam ullam, modi impedit eveniet quia quaerat molestias?</p>
-        </section>
-    `,
+  template: `
+    <section class="note-index">
+      <section class="notes" v-if="pinnedNotes.length">
+        <h2>Pinned Notes:</h2>
+        <NoteList :notes="pinnedNotes" />
+      </section>
+      <section class="notes" v-if="unPinnedNotes.length">
+        <h2>Notes:</h2>
+        <NoteList :notes="unPinnedNotes" />
+      </section>
+    </section>
+  `,
+  data() {
+    return {
+      notes: [],
+    }
+  },
+  created() {
+    keepService.query().then((notes) => {
+      this.notes = notes
+    })
+  },
+  computed: {
+    pinnedNotes() {
+      return this.notes.filter((note) => note.isPinned)
+    },
+    unPinnedNotes() {
+      return this.notes.filter((note) => !note.isPinned)
+    },
+  },
+  components: {
+    NoteList,
+  },
 }
+

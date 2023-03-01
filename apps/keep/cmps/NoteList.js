@@ -1,5 +1,6 @@
 import NotePreview from '../cmps/NotePreview.js'
 import { keepService } from '../services/note.service.js'
+import { utilService } from './../../../services/util.service.js'
 
 export default {
   props: ['notes'],
@@ -14,6 +15,8 @@ export default {
             Clr
           </button>
           <input type="color" class="color-picker" v-model="selectedColor" @input="changeColor(note)" hidden>
+          <button title="Pin/Unpin" @click="togglePin(note)">{{ note.isPinned ? 'Unpin' : 'Pin' }}</button>
+          <button title="Duplicate" class="duplicate-note-btn" @click="duplicate(note)">+</button>
         </div>
       </li>
     </ul>
@@ -27,19 +30,27 @@ export default {
     }
   },
   methods: {
-    //add/edit/tog
     remove(noteId) {
       this.$emit('remove', noteId)
     },
     openColorPicker(note) {
-        this.selectedColor = note.style.backgroundColor
-        const input = event.target.nextElementSibling
-        input.click()
-      },
-      changeColor(note) {
-        note.style.backgroundColor = this.selectedColor
-        keepService.update(note)
-      },
+      this.selectedColor = note.style.backgroundColor
+      const input = event.target.nextElementSibling
+      input.click()
+    },
+    changeColor(note) {
+      note.style.backgroundColor = this.selectedColor
+      keepService.update(note)
+    },
+    togglePin(note) {
+      note.isPinned = !note.isPinned
+      keepService.update(note)
+    },
+    duplicate(note) {
+        console.log('duplicate')
+        const duplicatedNote = JSON.parse(JSON.stringify(note))
+        this.$emit('duplicate', duplicatedNote)
+      }         
   },
   components: {
     NotePreview,

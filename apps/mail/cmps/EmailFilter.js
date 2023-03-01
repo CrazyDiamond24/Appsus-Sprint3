@@ -8,6 +8,7 @@
 }*/
 
 export default {
+    name: 'emailFilter',
     template: `
     <section>
     <button></div>Inbox <span class="inbox-count">0</span></button>

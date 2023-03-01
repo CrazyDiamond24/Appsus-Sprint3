@@ -1,4 +1,5 @@
 export default {
+    name: 'emailDetails',
     template: `
         <section>
             <h2>details</h2>

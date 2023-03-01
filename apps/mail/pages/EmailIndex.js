@@ -2,11 +2,12 @@
 import { storageService } from './storage.service.js'
 import { crudService } from './crud.service.js'*/
 
-import emailFilter from '../cmps/EmailFilter.js'
+import emailFilter from './../cmps/EmailFilter.js'
 //import emailList from '../cmps/EmailList.js'
-import emailCompose from '../cmps/EmailCompose.js'
+import emailCompose from './../cmps/EmailCompose.js'
 
 export default {
+    name: 'emailIndex',
     template: `
     <section class="email-index">
     <div class="email-filter">

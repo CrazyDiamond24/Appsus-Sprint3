@@ -4,7 +4,7 @@ export default {
             <h1>AppSus</h1>
             <nav>
                 <RouterLink v-for="(route, idx) in routes" :to="route.path" 
-                :title="route.title" :key="idx">{{route.title}} </RouterLink> 
+                :title="route.title" :key="idx" exact-active-class="active-link">{{route.title}} </RouterLink> 
             </nav>
         </header>
     `,

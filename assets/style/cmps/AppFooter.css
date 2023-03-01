@@ -1,0 +1,28 @@
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #021a3e;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  @media(max-width: 720px) {
+    /* .app-footer {
+      height: 30px;
+    } */
+  
+    .app-footer p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  

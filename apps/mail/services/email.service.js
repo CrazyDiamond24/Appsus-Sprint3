@@ -1,8 +1,5 @@
-import { utilService } from './utils.service.js'
-import { storageService } from './storage.service.js'
-import { asyncService } from '../../../services/async-storage.service.js'
-import { crudService } from './crud.service.js'
-import { emailFilter } from '../cmps/EmailFilter.js'
+import { utilService } from './../../../services/util.service.js'
+import { storageService } from '../../../services/async-storage.service.js'
 
 const EMAIL_STORAGE_KEY = 'emailDB'
 

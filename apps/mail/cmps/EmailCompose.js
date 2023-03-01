@@ -1,15 +1,16 @@
 import { emailService } from "../services/email.service.js"
 
 export default {
+    name: 'EmailCompose',
     template: `
     <button @click="openModal">Compose</button>
     <form class="email-compose-container" v-show='this.isActivated'>
-        <header>New Message <div class="close-compose" @click="closeModal" @click="saveInDrafts">x</div></header>
+        <header>New Message <div class="close-compose" @click="closeModal">x</div></header>
         <div class="secondary-content">
             <input type="text" placeholder="To" v-model="newEmail.to">
             <input type="text" placeholder="Subject" v-model="newEmail.subject">
             <input type="text" v-model="newEmail.body">
-            <button @click="checkCompose" @click="addMail">Send</button>
+            <button @click="addMail">Send</button>
         </div>
     </form>
     `,
@@ -32,7 +33,7 @@ export default {
             }
         },
         openModal() {
-            setNewEmptyEmail()
+            //setNewEmptyEmail()
             this.isActivated = true
         },
         closeModal() {

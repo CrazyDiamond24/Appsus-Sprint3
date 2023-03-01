@@ -1,46 +1,7 @@
-.note-preview {
-    
-}
-
-.note-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-li {
-    list-style: none;
-    padding: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    display:flex;
-    flex-direction: column;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    color: black;
-}
-
-.title {
-    color: black;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.txt {
-    text-align: center;
-    margin-block-start: 30px;
-}
-
-.delete-note-btn {
-    background-color: coral;
-
-}
-
-.control-btns {
-    margin-block-start: auto;
+.note-index {
     display: flex;
-}
-
-.color-picker {
-    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
   

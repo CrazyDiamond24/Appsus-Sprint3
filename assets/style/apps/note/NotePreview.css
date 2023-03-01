@@ -1,0 +1,28 @@
+.note-preview {
+    
+}
+
+.title {
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.txt {
+    text-align: center;
+    margin-block-start: 30px;
+}
+
+.delete-note-btn {
+    background-color: coral;
+
+}
+
+.control-btns {
+    margin-block-start: auto;
+    display: flex;
+}
+
+.color-picker {
+    display: none;
+}

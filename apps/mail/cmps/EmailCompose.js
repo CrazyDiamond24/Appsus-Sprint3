@@ -8,9 +8,10 @@ export default {
     <form class="email-compose-container" v-show='this.isActivated'>
         <header>New Message <div class="email-compose-close" @click="saveInDrafts">x</div></header>
         <div class="email-compose-body">
-            <input type="text" placeholder="To" v-model="newEmail.to">
+            <input type="email" placeholder="To" v-model="newEmail.to">
             <input type="text" placeholder="Subject" v-model="newEmail.subject">
-            <input type="text" v-model="newEmail.body" class="email-compose-body-input">
+            <!--<input type="text" v-model="newEmail.body" class="email-compose-body-input">-->
+            <textarea v-model="newEmail.body" class="email-compose-body-textarea"></textarea>
             <button @click="addMail" class="email-compose-send-btn">Send</button>
         </div>
     </form>

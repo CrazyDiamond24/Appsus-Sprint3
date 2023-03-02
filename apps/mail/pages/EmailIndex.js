@@ -1,9 +1,7 @@
-/*import { utilService } from './utils.service.js'
-import { storageService } from './storage.service.js'
-import { crudService } from './crud.service.js'*/
+import { emailService } from './../services/email.service.js'
 
 import emailFilter from './../cmps/EmailFilter.js'
-//import emailList from '../cmps/EmailList.js'
+import emailList from './../cmps/EmailList.js'
 import emailCompose from './../cmps/EmailCompose.js'
 
 export default {
@@ -13,15 +11,22 @@ export default {
     <div class="email-filter">
     </div>
 
-    <div class="main-view">
+    <!---<div class="main-view">
     <RouterView />
-    </div>
+    </div>-->
+    </section>
 
-    <email-compose />
+    <section>
+    <emailCompose />
+    </section>
+
+    <section>
+    <emailList :emails="emails" v-if="emails"/>
     </section>
     `,
     data() {
         return {
+            emails: null,
             email: null,
             selectedEmail: null
         }
@@ -34,9 +39,14 @@ export default {
             this.selectedEmail = null
         },
     },
+    created() {
+        //this.emails = emailService.query()
+        emailService.query()
+            .then(emails => this.emails = emails)
+    },
     components: {
         emailFilter,
-        //emailList,
+        emailList,
         emailCompose,
         //emailPreview
     },

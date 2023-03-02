@@ -22,7 +22,6 @@ const routerOptions = {
     {
       path: '/notes',
       component: NoteIndex,
-
       children: [
         {
 			path: ':id',

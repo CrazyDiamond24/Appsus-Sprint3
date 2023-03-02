@@ -46,7 +46,58 @@ function _createNotes() {
           backgroundColor: '#f5ee9e',
         },
         info: {
-          txt: 'Anxiety attacks are real!',
+          txt: 'In about 25 days, this will all be over.',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#731dd8',
+        },
+        info: {
+          url: 'https://lp-cms-production.imgix.net/image_browser/Amsterdam%201.jpg',
+          title: 'vacation',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#afa2ff',
+        },
+        info: {
+          url: 'https://www.gannett-cdn.com/presto/2022/09/30/PDTF/3eb55454-d73d-4d0f-b45a-a2af55e60263-Van_Gogh_SBM_013.jpg?crop=2399,1350,x0,y0&width=2399&height=1350&format=pjpg&auto=webp',
+          title: 'Van Gogh',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#e56399',
+        },
+        info: {
+          url: 'https://cdn.prod.www.spiegel.de/images/c3d52839-0001-0004-0000-000001325849_w948_r1.778_fpx30_fpy55.jpg',
+          title: 'Nights of Dam',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteTxt',
+        isPinned: false,
+        style: {
+          backgroundColor: '#7f96ff',
+        },
+        info: {
+          txt: 'How I wish to go back. I miss everything about this magical city.',
         },
       },
       {
@@ -58,8 +109,8 @@ function _createNotes() {
           backgroundColor: '#f5ee9e',
         },
         info: {
-          url: 'https://lp-cms-production.imgix.net/image_browser/Amsterdam%201.jpg',
-          title: 'vacation',
+          url: 'https://c8.alamy.com/comp/DT2R77/neon-lights-on-the-sign-of-the-smokey-coffeeshop-where-taking-and-DT2R77.jpg',
+          title: 'Where the Magic happens',
         },
       },
     ]

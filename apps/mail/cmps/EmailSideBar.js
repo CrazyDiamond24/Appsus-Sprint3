@@ -1,7 +1,7 @@
 export default {
-    name: 'emailFilter',
+    name: 'emailSideBar',
     template: `
-    <section>
+    <section class="email-sidebar-container">
     <button @click="renderInbox">Inbox <span class="inbox-count">0</span></button>
     <button @click="renderStars">Starred</button>
     <button>Sent</button>

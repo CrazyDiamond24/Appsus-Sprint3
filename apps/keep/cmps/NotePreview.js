@@ -5,10 +5,11 @@ import NoteImg from './NoteImg.js'
 export default {
   props: ['note'],
   template: `
-    <div @click="onSelectNote(note.id)" class="note-preview">
-    <h3 class="title">{{note.info.title}}</h3>
+  <div @click="onSelectNote(note.id)" class="note-preview" :style="{ backgroundColor: note.style.backgroundColor }">
+    <h3 class="title" contenteditable @input="onTitleInput">{{ note.info.title }}</h3>
     <Component :is="note.type" :info="note.info" ></Component>
-</div>
+    <div class="text" contenteditable @input="onTextInput">{{ note.info.txt }}</div>
+  </div>
     `,
   created() {},
   components: {
@@ -19,13 +20,20 @@ export default {
     onSelectNote(noteId) {
       this.$router.push({ name: 'NoteDetails', params: { id: noteId } })
     },
+    onTitleInput(event) {
+      //clone the obj and the info and update them with new val
+      this.$emit('update-note', { ...this.note, info: { ...this.note.info, title: event.target.innerText } })
+    },
+    onTextInput(event) {
+      this.$emit('update-note', { ...this.note, info: { ...this.note.info, txt: event.target.innerText } })
+    },
   },
   computed: {
     noteComponent() {
       switch (this.note.type) {
-        case 'noteTxt':
+        case 'NoteTxt':
           return 'note-txt'
-        case 'noteImg':
+        case 'NoteImg':
           return 'note-img'
         default:
           return null

@@ -1,0 +1,51 @@
+.note-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 50px;
+    width: auto;
+    margin: 1.5rem auto;
+    max-width: 100%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .note-filter input {
+    padding: 0.5em;
+    height: auto;
+    border-radius: 50px;
+    text-align: center;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+  }
+  
+  .note-filter input::placeholder {
+    color: #999;
+  }
+  
+  .note-filter button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+  }
+  
+  .note-filter button:hover {
+    transform: scale(1.2);
+    background-color: #eee;
+  }
+  
+  .note-filter button.selected {
+    background-color: #eee;
+  }
+  
+  .note-filter button:last-of-type {
+    padding-right: 5px;
+  }
+  

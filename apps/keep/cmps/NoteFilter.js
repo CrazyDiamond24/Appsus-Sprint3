@@ -1,8 +1,22 @@
 export default {
     template: `
-        <section>
-            <h2>Home</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis enim rem porro delectus. Quos expedita ipsam repellendus voluptas quas, nam ea eligendi veniam ullam, modi impedit eveniet quia quaerat molestias?</p>
-        </section>
+  <section class="note-filter">
+    <input
+      v-model="filterBy.text"
+      placeholder="Search notes"
+      type="text"
+      @input="emitFilter"
+    />
+  </section>
     `,
+  data() {
+    return {
+      filterBy: { text: '' },
+    }
+  },
+  methods: {
+    emitFilter() {
+      this.$emit('filter', this.filterBy)
+    },
+  },
 }

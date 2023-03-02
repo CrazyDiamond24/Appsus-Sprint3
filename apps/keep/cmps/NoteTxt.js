@@ -3,7 +3,7 @@ export default {
   template: `
     <div class="note-txt">
         <p class="txt">
-            {{info.txt}}
+            <!-- {{info.txt}} -->
         </p>
     </div>
 `,

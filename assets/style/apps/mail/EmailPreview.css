@@ -7,11 +7,13 @@
 }
 
 .email-preview-container.isRead {
-    font-weight: normal;
+    font-weight: bold;
 }
 
 p {
     margin: 0 0 0em;
+    padding: 10px;
+    margin-inline-end: 10px;
 }
 
 .prev {
@@ -50,4 +52,17 @@ p {
 
 .email-preview {
     font-family: Verdana;
+}
+
+.email-preview-icon {
+    display: none;
+    padding: 4px;
+}
+
+.email-list-main li:hover .email-preview-icon {
+    display: block;
+}
+
+.icons {
+    display: flex;
 }

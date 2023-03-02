@@ -15,8 +15,12 @@
 
 
 
+<<<<<<< HEAD
 
 li {
+=======
+.note-list li {
+>>>>>>> 8d5cf803bb4680317abfc4f694363755389f5c1a
     list-style: none;
     padding: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);

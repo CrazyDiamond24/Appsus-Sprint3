@@ -1,8 +1,9 @@
 .email-list-main {
-    width: 90%;
+    width: 100%;
     overflow: auto;
-    display: flex;
+    display: grid;
     flex-direction: column;
+    list-style-type: none;
 }
 
 .email-list-main ul {
@@ -18,7 +19,7 @@
 }
 
 .email-list-main li:hover {
-    box-shadow: 1px 1px 4px rgba(97, 96, 96, 0.5);
+    box-shadow: 1px 1px 5px rgba(97, 96, 96, 0.5);
 }
 
 .email-list-search {

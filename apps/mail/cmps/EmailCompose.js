@@ -1,12 +1,13 @@
 import { emailService } from './../services/email.service.js'
 import { eventBus } from './../../../services/event-bus.service.js'
+import { svgService } from './../services/svg.service.js'
 
 export default {
     name: 'emailCompose',
     template: `
-    <button @click="openModal">Compose</button>
+    <button class="email-compose-btn" @click="openModal" v-html="getSvg('compose_edit')"></button>
     <form class="email-compose-container" v-show='this.isActivated'>
-        <header>New Message <div class="email-compose-close" @click="saveInDrafts">x</div></header>
+        <header>New Message <div class="email-compose-close" @click="addToDrafts(this.email)">x</div></header>
         <div class="email-compose-body">
             <input type="email" placeholder="To" v-model="newEmail.to">
             <input type="text" placeholder="Subject" v-model="newEmail.subject">
@@ -24,7 +25,7 @@ export default {
     },
     methods: {
         checkCompose() {
-            if (!this.newEmail.to) {
+            if (this.newEmail.to === '(no subject)') {
                 alert('Error: Please specify at least one recipient.')
                 return
             }
@@ -56,11 +57,13 @@ export default {
             })
             this.NewEmail = emailService.getEmptyEmail()
         },
-        saveInDrafts(){
-            this.newEmail.isSent = false
-            this.newEmail.isDraft = true
-            console.log('TODO save in drafts') /*************************TODO************************** */
+        getSvg(iconName) {
+            return svgService.getSvg(iconName) + ' Compose'
+        },
+        addToDrafts() {
             this.closeModal()
+            this.newEmail.sentAt = Date.now()
+            emailService.addToDrafts(this.newEmail)
         }
     },
 }

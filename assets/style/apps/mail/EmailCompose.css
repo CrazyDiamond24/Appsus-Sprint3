@@ -78,3 +78,20 @@
 .email-compose-close:hover{
     background-color: rgba(255, 255, 255, 0.445);
 }
+
+.email-compose-btn {
+    display: flex;
+    width: 142px;
+    height: 56px;
+    padding: 0 24px 0 0;
+    font-size: .875rem;
+    border-radius: 16px;
+    background-color: #c4e5fc;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    margin-bottom: 2em;
+    border: none;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+}

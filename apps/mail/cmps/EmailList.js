@@ -15,10 +15,10 @@ export default {
     template:`
         <section class="email-list-main">
 
-            <div class="email-list-search">
-                <!-- TODO: svg here search icon -->
+            <!--<div class="email-list-search">
+                
                 <input @input="filterByTxt" v-model="filterBy" class="email-list-search-input" type="text" placeholder="Search mail">
-            </div>
+            </div> -->
             
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >

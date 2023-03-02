@@ -4,50 +4,60 @@
     height: 2.5rem;
     border-bottom: .5px solid #eceff1;
     cursor: pointer;
+    background-color: rgb(246, 248, 252);
 }
 
 .email-preview-container.isRead {
     font-weight: bold;
+    background-color: white;
 }
 
 p {
     margin: 0 0 0em;
     padding: 10px;
     margin-inline-end: 10px;
+    padding-inline: 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .prev {
     max-width: 50%;
     display: flex;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
 }
 
 .time {
     background-color: #fff;
-    position: relative;
-    width: 100px;
-    padding:0 0 0 1.5rem;
+    /*position: relative;*/
+    /*padding:0 0 0 1.5rem;*/
+    margin-left: 120px;
+    overflow: visible;
+    width: fit-content;
 }
 
 .from {
-    width: 10rem;
-    margin-inline-end: 4rem;
+    /*margin-inline-end: 4rem;*/
+    max-width: 290px;
+    width: 100%;
+    overflow: visible;
 }
 
 .subject {
-    margin-inline-end: 1rem;
+    /*margin-inline-end: 1rem;*/
+    /*max-width: 1000px;*/
+    overflow: visible;
+    width: fit-content;
 }
 
 .body {
     color: #767b81;
+    width: 800px;
 }
 
 .email-preview-checkbox {
     margin-right: 16px;
+    opacity: 0.4;
 }
 
 .email-preview {
@@ -56,13 +66,31 @@ p {
 
 .email-preview-icon {
     display: none;
-    padding: 4px;
+    padding: 12px;
 }
 
 .email-list-main li:hover .email-preview-icon {
     display: block;
 }
 
+.email-list-main li:hover .email-preview-checkbox {
+    opacity: 1;
+}
+
+.email-list-main li:hover .star {
+    opacity: 0.6;
+}
+
+.email-list-main li:hover .time {
+    display: none;
+}
+
 .icons {
     display: flex;
+    align-items: end;
+}
+
+.star {
+    /*fill: rgb(255, 191, 14);*/
+    opacity: 0.2;
 }

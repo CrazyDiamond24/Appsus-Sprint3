@@ -1,11 +1,14 @@
+import { svgNoteService } from '../services/note.svgserice.js'
+
 export default {
   name: 'AddNote',
   template: `
         <section class="add-note">
          <input type="text"  :placeholder="noteTypePlaceHolder" @keyup.enter="addNote" v-model="newNote.info.value" />
         <section class="btns-container">
-        <button v-for="noteType in noteTypes" @click="changeNoteType(noteType.type)" :title="noteType.title" :class="isNoteSelected(noteType.type)" >
-         </button>
+        <button v-for="noteType in noteTypes" @click="changeNoteType(noteType.type)" :title="noteType.title" :class="isNoteSelected(noteType.type)">
+        <i v-html="getSvgNote(noteType.icon)"></i>
+      </button>
         </section>
 
 
@@ -30,17 +33,23 @@ export default {
         {
           type: 'NoteTxt',
           title: 'Free text',
+          icon: 'add_text'
         },
         {
           type: 'NoteImg',
-          title: 'Enter image URL',
+          title: 'Add image',
+          icon: 'add_image',
         },
         {
           type: 'NoteVid',
-          title: 'Enter youtube URL',
+          title: 'Add video',
+          icon: 'add_video',
         },
       ]
       return notesTypes
+    },
+    getSvgNote(iconName) {
+      return svgNoteService.getSvgNote(iconName)
     },
     changeNoteType(noteType) {
       this.newNote.type = noteType
@@ -63,7 +72,7 @@ export default {
     noteTypePlaceHolder() {
       switch (this.newNote.type) {
         case 'NoteTxt':
-          return 'Add a note...'
+          return 'Take a note...'
 
         case 'NoteImg':
           return 'Enter image URL'

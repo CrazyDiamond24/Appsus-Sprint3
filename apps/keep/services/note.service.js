@@ -43,7 +43,46 @@ function _createNotes() {
         type: 'NoteImg',
         isPinned: false,
         style: {
-          backgroundColor: '#731dd8',
+          backgroundColor: '#d7aefb', //purple
+        },
+        info: {
+          url: 'https://usaupload.com/cache/plugins/filepreviewer/643081/bf0806adf6f3889005d1142caad14f325c97027d00a160beec3bf0bb20cc0e9a/1100x800_cropped.jpg?fbclid=IwAR1TqP5pbvOr4Y8OLnqSF7puJu6Xk8A8rsYxUBFB1ThdGg_IhM5A20gzzek',
+          title: 'My Drawing',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#a7ffeb', //purple
+        },
+        info: {
+          url: 'https://usaupload.com/cache/plugins/filepreviewer/643082/e2b32cd2e9162740bcbea039a0ba1e40e3392ed39a77840cc69fb655708163f4/1100x800_cropped.jpg?fbclid=IwAR3cC6Gyfsq_tLlrhyyZthv9vkSeADMikl4KAEMW5Y86lMBmSOctMGbnyHc',
+          title: 'Psychedelic self-portrait',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#aecbfa',
+        },
+        info: {
+          url: 'https://raw.githubusercontent.com/CrazyDiamond24/myDrawings/main/img/6.jpg',
+          title: 'My First Realistic Drawing',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#fdcfe8', //pink
         },
         info: {
           url: 'https://lp-cms-production.imgix.net/image_browser/Amsterdam%201.jpg',
@@ -56,7 +95,7 @@ function _createNotes() {
         type: 'NoteImg',
         isPinned: false,
         style: {
-          backgroundColor: '#afa2ff',
+          backgroundColor: '#ccff90', //purple
         },
         info: {
           url: 'https://www.gannett-cdn.com/presto/2022/09/30/PDTF/3eb55454-d73d-4d0f-b45a-a2af55e60263-Van_Gogh_SBM_013.jpg?crop=2399,1350,x0,y0&width=2399&height=1350&format=pjpg&auto=webp',
@@ -69,7 +108,20 @@ function _createNotes() {
         type: 'NoteImg',
         isPinned: false,
         style: {
-          backgroundColor: '#e56399',
+          backgroundColor: '#e6c9a8', //beige
+        },
+        info: {
+          url: 'https://www.vincentvangogh.org/images/paintings/irises.jpg',
+          title: 'Irises - Van Gogh',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#a7ffeb', //blue-ish
         },
         info: {
           url: 'https://cdn.prod.www.spiegel.de/images/c3d52839-0001-0004-0000-000001325849_w948_r1.778_fpx30_fpy55.jpg',
@@ -82,10 +134,23 @@ function _createNotes() {
         type: 'NoteTxt',
         isPinned: false,
         style: {
-          backgroundColor: '#7f96ff',
+          backgroundColor: '#ccff90', //greenish
         },
         info: {
           txt: 'How I wish to go back. I miss everything about this magical city.',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#fdcfe8', //purple
+        },
+        info: {
+          url: 'https://raw.githubusercontent.com/CrazyDiamond24/myDrawings/main/img/4.jpg',
+          title: 'July 2022',
         },
       },
       {
@@ -107,11 +172,29 @@ function _createNotes() {
         type: 'NoteVid',
         isPinned: false,
         style: {
-          backgroundColor: '#f5ee9e',
+          backgroundColor: '#e6c9a8', //beige
         },
         info: {
           url: 'https://www.youtube.com/watch?v=CGzKnyhYDQI',
           title: 'The Legend',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteTodo',
+        isPinned: false,
+        style: {
+          backgroundColor: '#aecbfa', //sky blue
+        },
+        info: {
+          title: 'Shopping List',
+          todos: [
+            { txt: 'Avocado' },
+            { txt: 'Bread' },
+            { txt: 'Milk' },
+            { txt: 'Tomato' },
+          ],
         },
       },
     ]
@@ -142,9 +225,9 @@ function _createNote(type, setting) {
       info.title = 'Image'
       info.url = setting.value
       break
-      case 'NoteVid':
-        info.title = 'Video'
-        info.url = setting.value
+    case 'NoteVid':
+      info.title = 'Video'
+      info.url = setting.value
   }
   const style = { backgroundColor: '#f5ee9e' }
   const newNote = {

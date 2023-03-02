@@ -10,13 +10,13 @@ export default {
     <section class="note-index">
     <router-view :notes="notes" />
     <AddNote @add="addNote"/>
-    <NoteFilter @filter="setFilterBy" />
+    <!-- <NoteFilter @filter="setFilterBy" /> -->
       <section class="notes" v-if="pinnedNotes.length">
         <h2>Pinned Notes:</h2>
         <NoteList :notes="pinnedNotes"  @duplicate="duplicateNote" />
       </section>
       <section class="notes" v-if="unPinnedNotes.length">
-        <h2>Notes:</h2>
+        <!-- <h2>Notes:</h2> -->
         <NoteList :notes="unPinnedNotes" @remove="removeNote" @duplicate="duplicateNote" />
       </section>
     </section>

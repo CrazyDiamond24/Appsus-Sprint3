@@ -2,6 +2,7 @@
 import NoteTxt from './NoteTxt.js'
 import NoteImg from './NoteImg.js'
 import NoteVid from './NoteVid.js'
+import NoteTodo from './NoteTodo.js'
 
 export default {
   props: ['note'],
@@ -17,6 +18,7 @@ export default {
     NoteTxt,
     NoteImg,
     NoteVid,
+    NoteTodo,
   },
   methods: {
     onSelectNote(noteId) {
@@ -24,22 +26,35 @@ export default {
     },
     onTitleInput(event) {
       //clone the obj and the info and update them with new val
-      this.$emit('update-note', { ...this.note, info: { ...this.note.info, title: event.target.innerText } })
+      this.$emit('update-note', {
+        ...this.note,
+        info: { ...this.note.info, title: event.target.innerText },
+      })
     },
     onTextInput(event) {
-      this.$emit('update-note', { ...this.note, info: { ...this.note.info, txt: event.target.innerText } })
+      this.$emit('update-note', {
+        ...this.note,
+        info: { ...this.note.info, txt: event.target.innerText },
+      })
+    },
+    toggleTodo(todoId) {
+      const data = {
+        noteId: this.note.id,
+        todoId,
+      }
+      this.$emit('toggleTodo', data)
     },
   },
   computed: {
-    noteComponent() {
-      switch (this.note.type) {
-        case 'NoteTxt':
-          return 'note-txt'
-        case 'NoteImg':
-          return 'note-img'
-        default:
-          return null
-      }
-    },
+    // noteComponent() {
+    //   switch (this.note.type) {
+    //     case 'NoteTxt':
+    //       return 'note-txt'
+    //     case 'NoteImg':
+    //       return 'note-img'
+    //     default:
+    //       return null
+    //   }
+    // },
   },
 }

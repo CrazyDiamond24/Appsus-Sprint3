@@ -3,6 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     margin-inline-end: 30px;
+    margin-block-end: 100px;
 }
 
 .notes {
@@ -13,14 +14,14 @@
     margin: 20px;
 }
 
+.control-btns button {
+    background-color: transparent;
+    border:none;
+
+}
 
 
-<<<<<<< HEAD
-
-li {
-=======
-.note-list li {
->>>>>>> 8d5cf803bb4680317abfc4f694363755389f5c1a
+.note-li {
     list-style: none;
     padding: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -32,3 +33,14 @@ li {
     border-top-right-radius: 20px;
     color: black;
 }
+
+.note-li .control-btns {
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+  }
+  
+  .note-li:hover .control-btns {
+    opacity: 1;
+  }
+  
+  

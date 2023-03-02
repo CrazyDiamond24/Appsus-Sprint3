@@ -6,7 +6,7 @@
         </section>
     `,
 }*/
-
+import { emailService } from './../services/email.service.js'
 import emailPreview from './EmailPreview.js'
 
 export default {
@@ -17,19 +17,20 @@ export default {
 
             <div class="email-list-search">
                 <!-- TODO: svg here search icon -->
-                <input @input="filterByTxt" v-model="filterBy" class="form-control" type="text" placeholder="Search mail">
+                <input @input="filterByTxt" v-model="filterBy" class="email-list-search-input" type="text" placeholder="Search mail">
             </div>
             
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >
-                <email-preview :email="email" @remove="deleteEmail"/>
+                <emailPreview :email="email" @remove="deleteEmail"/>
             </li>
         </ul>
         </section>
     `,
     data(){
         return{
-            filterBy: '',   
+            filterBy: '', /*********TODO: לטפל בחיפוש */
+            email: null,  
         }
     },
     methods: {
@@ -42,6 +43,10 @@ export default {
         filterByTxt(){
             this.$emit('filterByTxt', this.filterBy)
         },
+    },
+    created() {
+        emailService.query()
+             .then(email => this.email = email)
     },
     components: {
         emailPreview,

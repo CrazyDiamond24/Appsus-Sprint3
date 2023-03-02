@@ -1,0 +1,53 @@
+.email-preview-container {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    border-bottom: .5px solid #eceff1;
+    cursor: pointer;
+}
+
+.email-preview-container.isRead {
+    font-weight: normal;
+}
+
+p {
+    margin: 0 0 0em;
+}
+
+.prev {
+    max-width: 50%;
+    display: flex;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.time {
+    background-color: #fff;
+    position: relative;
+    width: 100px;
+    padding:0 0 0 1.5rem;
+}
+
+.from {
+    width: 10rem;
+    margin-inline-end: 4rem;
+}
+
+.subject {
+    margin-inline-end: 1rem;
+}
+
+.body {
+    color: #767b81;
+}
+
+.email-preview-checkbox {
+    margin-right: 16px;
+}
+
+.email-preview {
+    font-family: Verdana;
+}

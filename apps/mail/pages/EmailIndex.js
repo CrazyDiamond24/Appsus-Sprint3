@@ -1,27 +1,34 @@
-/*import { utilService } from './utils.service.js'
-import { storageService } from './storage.service.js'
-import { crudService } from './crud.service.js'*/
+import { emailService } from './../services/email.service.js'
 
 import emailFilter from './../cmps/EmailFilter.js'
-//import emailList from '../cmps/EmailList.js'
+import emailList from './../cmps/EmailList.js'
 import emailCompose from './../cmps/EmailCompose.js'
 
 export default {
     name: 'emailIndex',
     template: `
     <section class="email-index">
-    <div class="email-filter">
-    </div>
+        <div class="email-filter">
+        </div>
 
-    <div class="main-view">
-    <RouterView />
-    </div>
+        <!---<div class="main-view">
+        <RouterView />
+        </div>-->
+        
 
-    <email-compose />
+        <section>
+        <emailCompose />
+        <emailFilter />
+        </section>
+
+        <section>
+        <emailList :emails="emails" v-if="emails"/>
+        </section>
     </section>
     `,
     data() {
         return {
+            emails: null,
             email: null,
             selectedEmail: null
         }
@@ -34,9 +41,14 @@ export default {
             this.selectedEmail = null
         },
     },
+    created() {
+        //this.emails = emailService.query()
+        emailService.query()
+            .then(emails => this.emails = emails)
+    },
     components: {
         emailFilter,
-        //emailList,
+        emailList,
         emailCompose,
         //emailPreview
     },

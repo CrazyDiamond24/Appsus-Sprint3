@@ -5,15 +5,16 @@ export default {
     name: 'emailPreview',
     props: ['email'],
     template: `
-        <div class="email-preview" @click="setDetails(this.email)" :class="{isRead:email.isRead}">
-            <div class="check-star">
-                <!-- TODO: star svg here -->
+        <div class="email-preview-container" @click="setDetails(this.email)" :class="{isRead:email.isRead}">
+            <input type="checkbox" class="email-preview-checkbox"/>
+            <div class="check-star"><!-- TODO: star svg here --></div>
+            <p class="email-preview from">{{email.from}}</p>
+            <div class="prev">
+                <p class="email-preview subject">{{email.subject}}</p>
+                <p class="email-preview body">{{email.body}}</p>
             </div>
-            <div class="email-preview-from">{{email.from}}</div>
-            <div class="email-preview-subject">{{email.subject}}</div>
-            <div class="email-preview-body">{{email.body}}</div>
-            <div class="email-preview-time">{{email.sentAt}}</div>
-            <div class="email-preview-icons">
+            <p class="email-preview time">{{email.sentAt}}</p>
+            <p class="email-preview icons"></p>
               <!-- TODO: svg here :hover -->
            </div>
         </div>
@@ -29,6 +30,7 @@ export default {
             if (!email.isTrash) {
                 email.isTrash = true
                 emailService.saveEmail(email)
+                //TODO: לעדכן את ה Trash
             } else {
                 this.$emit('remove', email.id)
             }

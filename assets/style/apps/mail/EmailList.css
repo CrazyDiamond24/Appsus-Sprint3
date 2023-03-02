@@ -1,0 +1,29 @@
+.email-list-main {
+    width: 90%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-list-main ul {
+    width: 90%;
+    margin-left: 50px;
+}
+
+.email-list-main li {
+    list-style: none;
+    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+}
+
+.email-list-main li:first-child {
+    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%) , 0 -1px 0 0 rgb(100 121 143 / 12%);
+}
+
+.email-list-search {
+    margin-left: 100px;
+}
+
+.email-list-search-input {
+    width: 500px;
+}
+  

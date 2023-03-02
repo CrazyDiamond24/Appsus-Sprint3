@@ -8,20 +8,22 @@ export default {
     name: 'emailIndex',
     template: `
     <section class="email-index">
-    <div class="email-filter">
-    </div>
+        <div class="email-filter">
+        </div>
 
-    <!---<div class="main-view">
-    <RouterView />
-    </div>-->
-    </section>
+        <!---<div class="main-view">
+        <RouterView />
+        </div>-->
+        
 
-    <section>
-    <emailCompose />
-    </section>
+        <section>
+        <emailCompose />
+        <emailFilter />
+        </section>
 
-    <section>
-    <emailList :emails="emails" v-if="emails"/>
+        <section>
+        <emailList :emails="emails" v-if="emails"/>
+        </section>
     </section>
     `,
     data() {

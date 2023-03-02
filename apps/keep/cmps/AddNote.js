@@ -1,5 +1,5 @@
 export default {
-    name:'AddNote',
+  name: 'AddNote',
   template: `
         <section class="add-note">
          <input type="text"  :placeholder="noteTypePlaceHolder" @keyup.enter="addNote" v-model="newNote.info.value" />
@@ -35,6 +35,10 @@ export default {
           type: 'NoteImg',
           title: 'Enter image URL',
         },
+        {
+          type: 'NoteVid',
+          title: 'Enter youtube URL',
+        },
       ]
       return notesTypes
     },
@@ -47,7 +51,7 @@ export default {
     addNote() {
       this.$emit('add', this.newNote)
       this.newNote = {
-        type: 'noteTxt',
+        type: 'NoteTxt',
         isPinned: true,
         info: {
           value: '',
@@ -64,9 +68,12 @@ export default {
         case 'NoteImg':
           return 'Enter image URL'
 
-          default:
-            this.newNote.type = 'NoteTxt'
-            return 'Add a note...'
+        case 'NoteVid':
+          return 'Enter youtube video URL'
+
+        default:
+          this.newNote.type = 'NoteTxt'
+          return 'Add a note...'
       }
     },
   },

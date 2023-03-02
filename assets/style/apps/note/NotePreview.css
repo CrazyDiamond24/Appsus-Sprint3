@@ -1,20 +1,24 @@
 .note-preview {
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
 .title {
     color: black;
     text-align: center;
     text-decoration: underline;
+    height: 100%;
+    width: 100%;
 }
 
 .txt {
     text-align: center;
-    margin-block-start: 30px;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
 }
 
 .delete-note-btn {
@@ -30,3 +34,9 @@
 .color-picker {
     display: none;
 }
+
+.note-video iframe {
+    height: 100%;
+    width: 100%;
+}
+  

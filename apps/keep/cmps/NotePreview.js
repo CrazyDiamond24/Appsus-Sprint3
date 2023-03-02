@@ -1,11 +1,12 @@
 //import types
 import NoteTxt from './NoteTxt.js'
 import NoteImg from './NoteImg.js'
+import NoteVid from './NoteVid.js'
 
 export default {
   props: ['note'],
   template: `
-  <div @click="onSelectNote(note.id)" class="note-preview" :style="{ backgroundColor: note.style.backgroundColor }">
+ <div @click.stop="onSelectNote(note.id)" class="note-preview" :style="{ backgroundColor: note.style.backgroundColor }">
     <h3 class="title" contenteditable @input="onTitleInput">{{ note.info.title }}</h3>
     <Component :is="note.type" :info="note.info" ></Component>
     <div class="text" contenteditable @input="onTextInput">{{ note.info.txt }}</div>
@@ -15,6 +16,7 @@ export default {
   components: {
     NoteTxt,
     NoteImg,
+    NoteVid,
   },
   methods: {
     onSelectNote(noteId) {

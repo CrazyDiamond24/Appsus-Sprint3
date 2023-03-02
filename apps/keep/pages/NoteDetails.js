@@ -1,5 +1,6 @@
 import NotePreview from '../cmps/NotePreview.js'
-
+//note preview should get a prop to tell it that it's being rendered in the preview setcion
+//if isdetails is true to render it
 export default {
   name: 'NoteDetails',
   props: ['id', 'notes'],
@@ -9,6 +10,7 @@ export default {
     <div class="modal">
       <h2>Click text to edit</h2>
       <section>
+      
         <NotePreview v-if="note" :note="note" @update-note="onUpdateNote" />
         <RouterLink to="/notes" class="back-link" >Back to Notes</RouterLink>
       </section>

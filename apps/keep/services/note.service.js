@@ -40,18 +40,6 @@ function _createNotes() {
       {
         id: utilService.makeId(),
         createdAt: Date.now(),
-        type: 'NoteTxt',
-        isPinned: false,
-        style: {
-          backgroundColor: '#f5ee9e',
-        },
-        info: {
-          txt: 'In about 25 days, this will all be over.',
-        },
-      },
-      {
-        id: utilService.makeId(),
-        createdAt: Date.now(),
         type: 'NoteImg',
         isPinned: false,
         style: {
@@ -113,6 +101,19 @@ function _createNotes() {
           title: 'Where the Magic happens',
         },
       },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteVid',
+        isPinned: false,
+        style: {
+          backgroundColor: '#f5ee9e',
+        },
+        info: {
+          url: 'https://www.youtube.com/watch?v=CGzKnyhYDQI',
+          title: 'The Legend',
+        },
+      },
     ]
 
     utilService.saveToStorage(KEEP_KEY, notes)
@@ -140,6 +141,10 @@ function _createNote(type, setting) {
     case 'NoteImg':
       info.title = 'Image'
       info.url = setting.value
+      break
+      case 'NoteVid':
+        info.title = 'Video'
+        info.url = setting.value
   }
   const style = { backgroundColor: '#f5ee9e' }
   const newNote = {

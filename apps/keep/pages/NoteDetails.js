@@ -1,15 +1,36 @@
+import NotePreview from '../cmps/NotePreview.js'
+
 export default {
   name: 'NoteDetails',
-  props: ['id'],
+  props: ['id', 'notes'],
   template: `
+  <div class="modal-wrapper">
+    <div class="modal-backdrop"></div>
+    <div class="modal">
+      <h2>Click text to edit</h2>
       <section>
-        <h2>Details</h2>
-        <p>Details about note {{ id }}</p>
+        <NotePreview v-if="note" :note="note" @update-note="onUpdateNote" />
+        <RouterLink to="/notes" class="back-link" >Back to Notes</RouterLink>
       </section>
-    `,
+    </div>
+  </div>
+  `,
   computed: {
-    noteId() {
-      return this.$route.params.id
+    note() {
+      return this.notes.find((note) => note.id === this.id)
     },
   },
+  components: {
+    NotePreview,
+  },
+  methods: {
+    onUpdateNote(updatedNote) {
+      const index = this.notes.findIndex((note) => note.id === updatedNote.id)
+      if (index !== -1) {
+        this.notes.splice(index, 1, updatedNote)
+      }
+    },
+
 }
+}
+

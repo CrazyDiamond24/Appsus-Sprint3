@@ -1,17 +1,19 @@
 import { keepService } from '../services/note.service.js'
 import NoteList from '../cmps/NoteList.js'
 import AddNote from '../cmps/AddNote.js'
+import NoteFilter from '../cmps/NoteFilter.js'
 import { utilService } from './../../../services/util.service.js'
 
 export default {
   name: 'noteIndex',
   template: `
     <section class="note-index">
-    <router-view></router-view>
+    <router-view :notes="notes" />
     <AddNote @add="addNote"/>
+    <NoteFilter @filter="setFilterBy" />
       <section class="notes" v-if="pinnedNotes.length">
         <h2>Pinned Notes:</h2>
-        <NoteList :notes="pinnedNotes" @duplicate="duplicateNote" />
+        <NoteList :notes="pinnedNotes"  @duplicate="duplicateNote" />
       </section>
       <section class="notes" v-if="unPinnedNotes.length">
         <h2>Notes:</h2>
@@ -22,6 +24,7 @@ export default {
   data() {
     return {
       notes: [],
+      filterBy: {},
     }
   },
   methods: {
@@ -48,6 +51,9 @@ export default {
         this.notes.push(addedNote)
       })
     },
+    setFilterBy(searchTerm) {
+      this.filterBy = searchTerm
+    },
   },
   created() {
     keepService.query().then((notes) => {
@@ -61,9 +67,19 @@ export default {
     unPinnedNotes() {
       return this.notes.filter((note) => !note.isPinned)
     },
+    filteredNotes() {
+      const regex = new RegExp(this.filterBy.text, 'i')
+      return this.notes.filter(
+        (note) => regex.test(note.title) || regex.test(note.info.txt)
+      )
+    },
+    // allNotes() {
+    //   return [...this.pinnedNotes, ...this.unPinnedNotes, ...this.filteredNotes]
+    // },
   },
   components: {
     NoteList,
     AddNote,
+    NoteFilter,
   },
 }

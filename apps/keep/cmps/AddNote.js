@@ -10,8 +10,6 @@ export default {
         <i v-html="getSvgNote(noteType.icon)"></i>
       </button>
         </section>
-
-
         </section>
     `,
 

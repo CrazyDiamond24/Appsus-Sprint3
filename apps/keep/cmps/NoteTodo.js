@@ -3,24 +3,20 @@ export default {
   template: `
   <div class="note-todo">
     <ol class="todos-list">
-      <li v-for="todo in noteTodos" :key="todo.id" :class="[setTodoClassStatus(todo), 'todo']" @click="toggleTodo(todo.id)">
-        <p :style="{ textDecoration: todo.doneAt ? 'line-through' : 'none' }">
+      <li v-for="todo in noteTodos" :key="todo.id">
+        <p @click.stop="toggleTodoDone(todo)" :class="{'done': todo.isDone}">
           {{ todo.txt }}
         </p>
       </li>
     </ol>
   </div>
-    `,
+  `,
   data() {
     return {}
   },
   methods: {
-    toggleTodo(todoId) {
-      const todo = this.info.todos.find((todo) => todo.id === todoId)
-      todo.doneAt = !todo.doneAt
-    },
-    setTodoClassStatus(todo) {
-      return todo.doneAt ? 'done' : ''
+    toggleTodoDone(todo) {
+      todo.isDone = !todo.isDone
     },
   },
   computed: {

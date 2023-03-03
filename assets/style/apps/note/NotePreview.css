@@ -26,8 +26,8 @@
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-decoration-color: rgb(147, 146, 146,0.2);
-  font-size:1.2rem;
+  text-decoration-color: rgb(147, 146, 146, 0.2);
+  font-size: 1.2rem;
   font-weight: bold;
   font-family: 'Indie Flower', cursive;
 }
@@ -36,7 +36,6 @@
   height:100px;
   padding:20px;
 } */
-
 
 .note-todo {
   margin-bottom: 1rem;
@@ -75,13 +74,11 @@
 
 .color-picker {
   display: none;
-
 }
 
 .note-img {
   cursor: pointer;
 }
-
 
 .note-video iframe {
   height: 100%;
@@ -96,7 +93,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(146, 148, 151,0.2);
+  background-color: rgb(146, 148, 151, 0.2);
   border-radius: 23px;
 }
 .colors > div {

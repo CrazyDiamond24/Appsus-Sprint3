@@ -45,6 +45,11 @@ export default {
           title: 'Add video',
           icon: 'add_video',
         },
+        {
+          type: 'NoteTodo',
+          title: 'ToDo List',
+          icon: 'add_todo',
+        },
       ]
       return notesTypes
     },
@@ -79,6 +84,9 @@ export default {
 
         case 'NoteVid':
           return 'Enter youtube video URL'
+
+        case 'NoteTodo':
+          return 'Enter comma separated todos'
 
         default:
           this.newNote.type = 'NoteTxt'

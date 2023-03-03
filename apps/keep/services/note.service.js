@@ -73,7 +73,8 @@ function _createNotes() {
         },
         info: {
           url: 'https://raw.githubusercontent.com/CrazyDiamond24/myDrawings/main/img/6.jpg',
-          title: 'My First Realistic Drawing',
+          title: 'My First',
+          txt: 'First attempt at realistic drawing.',
         },
       },
       {
@@ -86,7 +87,8 @@ function _createNotes() {
         },
         info: {
           url: 'https://lp-cms-production.imgix.net/image_browser/Amsterdam%201.jpg',
-          title: 'vacation',
+          title: 'Holiday',
+          txt: 'Roger Waters will be there in April.',
         },
       },
       {
@@ -100,6 +102,7 @@ function _createNotes() {
         info: {
           url: 'https://www.gannett-cdn.com/presto/2022/09/30/PDTF/3eb55454-d73d-4d0f-b45a-a2af55e60263-Van_Gogh_SBM_013.jpg?crop=2399,1350,x0,y0&width=2399&height=1350&format=pjpg&auto=webp',
           title: 'Van Gogh',
+          txt: '“Once upon a midnight dreary”',
         },
       },
       {
@@ -113,6 +116,7 @@ function _createNotes() {
         info: {
           url: 'https://www.vincentvangogh.org/images/paintings/irises.jpg',
           title: 'Irises - Van Gogh',
+          txt: 'Such a beautiful painting. Serene and comforting.',
         },
       },
       {
@@ -126,6 +130,7 @@ function _createNotes() {
         info: {
           url: 'https://cdn.prod.www.spiegel.de/images/c3d52839-0001-0004-0000-000001325849_w948_r1.778_fpx30_fpy55.jpg',
           title: 'Nights of Dam',
+          txt: 'There is no better place to be...',
         },
       },
       {
@@ -151,6 +156,7 @@ function _createNotes() {
         info: {
           url: 'https://raw.githubusercontent.com/CrazyDiamond24/myDrawings/main/img/4.jpg',
           title: 'July 2022',
+          txt: 'I find wrinkles fascinating',
         },
       },
       {
@@ -163,7 +169,8 @@ function _createNotes() {
         },
         info: {
           url: 'https://c8.alamy.com/comp/DT2R77/neon-lights-on-the-sign-of-the-smokey-coffeeshop-where-taking-and-DT2R77.jpg',
-          title: 'Where the Magic happens',
+          title: 'Where Magic happens',
+          txt: 'Moon Rocks in the Moon Light.'
         },
       },
       {
@@ -228,6 +235,16 @@ function _createNote(type, setting) {
     case 'NoteVid':
       info.title = 'Video'
       info.url = setting.value
+      break
+    case 'NoteTodo':
+      info.title = 'To-Do List'
+      info.todos = setting.value.split(',').map((txt) => {
+        const todo = {
+          txt,
+        }
+        return todo
+      })
+      break
   }
   const style = { backgroundColor: '#f5ee9e' }
   const newNote = {

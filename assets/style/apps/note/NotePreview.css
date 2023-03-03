@@ -78,6 +78,10 @@
 
 }
 
+.note-img {
+  cursor: pointer;
+}
+
 
 .note-video iframe {
   height: 100%;

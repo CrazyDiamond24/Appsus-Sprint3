@@ -7,10 +7,26 @@ import NoteTodo from './NoteTodo.js'
 export default {
   props: ['note'],
   template: `
- <div @click.stop="onSelectNote(note.id)" class="note-preview" :style="{ backgroundColor: note.style.backgroundColor }">
-    <h3 class="title" contenteditable @input="onTitleInput">{{ note.info.title }}</h3>
-    <Component :is="note.type" :info="note.info" ></Component>
-    <div class="text" contenteditable @input="onTextInput">{{ note.info.txt }}</div>
+  <div
+    @click.stop="onSelectNote(note.id)"
+    class="note-preview"
+    :style="{ backgroundColor: note.style.backgroundColor }"
+  >
+    <h3
+      class="title"
+      :contenteditable="$route.name === 'NoteDetails'"
+      @input="onTitleInput"
+    >
+      {{ note.info.title }}
+    </h3>
+    <component :is="note.type" :info="note.info"></component>
+    <div
+      class="text"
+      :contenteditable="$route.name === 'NoteDetails'"
+      @input="onTextInput"
+    >
+      {{ note.info.txt }}
+    </div>
   </div>
     `,
   created() {},
@@ -45,16 +61,5 @@ export default {
       this.$emit('toggleTodo', data)
     },
   },
-  computed: {
-    // noteComponent() {
-    //   switch (this.note.type) {
-    //     case 'NoteTxt':
-    //       return 'note-txt'
-    //     case 'NoteImg':
-    //       return 'note-img'
-    //     default:
-    //       return null
-    //   }
-    // },
-  },
+  computed: {},
 }

@@ -1,8 +1,8 @@
 export default {
   template: `
     <header class="app-header">
-      <div class="logo-container">
       <RouterLink to="/">
+        <div class="logo-container">
         <img class="logo-img" src="./assets/img/A.png" alt="A">
         <img class="logo-img" src="./assets/img/P.PNG" alt="P">
         <img class="logo-img" src="./assets/img/P.PNG" style="margin-right: -5px;" alt="P">

@@ -1,8 +1,12 @@
 .note-preview {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
   /* height: 100px; */
 }
 
@@ -38,7 +42,14 @@
 } */
 
 .note-todo {
-  margin-bottom: 1rem;
+  display: flex;
+  min-width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-txt {
+
 }
 
 .todo-title {
@@ -49,7 +60,7 @@
 
 .todos-list {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font-size: 1.2rem;
   font-family: 'Gochi Hand', cursive;
 }

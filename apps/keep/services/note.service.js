@@ -252,6 +252,81 @@ function _createNotes() {
           ],
         },
       },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#aecbfa', //skyblue
+        },
+        info: {
+          url: 'https://i.ibb.co/K2k5gzV/cats.jpg',
+          title: 'My babies',
+          txt: 'Basking in the sunlight',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteVid',
+        isPinned: false,
+        style: {
+          backgroundColor: '#fff475', //yellow
+        },
+        info: {
+          url: 'https://www.youtube.com/watch?v=OPlK5HwFxcw',
+          title: 'Tchaikovsky',
+          txt: 'Hymn of the Cherubim'
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteTodo',
+        isPinned: false,
+        style: {
+          backgroundColor: '#a7ffeb', //blue
+        },
+        info: {
+          title: 'Books to Read',
+          todos: [
+            { txt: 'Eloquent JavaScript' },
+            { txt: 'To Kill a Mockingbird' },
+            { txt: 'The Great Gatsby' },
+            { txt: 'The Color Purple' },
+            { txt: 'Mrs. Dalloway' },
+          ],
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#fdcfe8', //pink
+        },
+        info: {
+          url: 'https://i.ibb.co/n1tmDhr/cricket.jpg',
+          title: 'Cricket',
+          txt: 'Drew that before the bootcamp.',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#f28b82', //coral
+        },
+        info: {
+          url: 'https://practicalpages.files.wordpress.com/2010/02/starry-night-van-gogh.jpg?w=640',
+          title: 'Starry Night',
+          txt: 'Vincent Van Gogh.',
+        },
+      },
     ]
 
     utilService.saveToStorage(KEEP_KEY, notes)

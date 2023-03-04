@@ -47,3 +47,8 @@
     border-radius: 0.5rem;
     text-decoration: none;
   }
+
+  .back-link:hover {
+    background-color: #34495e;
+    transition: background-color 0.2s ease-in-out;
+  }

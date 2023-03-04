@@ -11,3 +11,18 @@
     width: 200px;
     align-self:center;
 }
+
+.book-index .btn-search-toggle {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none; 
+    border-radius: 20px;
+    margin-block-end: 20px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-search-toggle:hover {
+    background-color: #3e8e41;
+  }

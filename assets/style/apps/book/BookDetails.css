@@ -16,7 +16,7 @@
 
 
 
-table {
+.book-details table {
     border-collapse: collapse;
   }
   
@@ -26,7 +26,7 @@ table {
     text-align: left;
   }
   
-  td,
+ .book-details td,
   th {
     padding: 0.5rem;
     text-align: left;
@@ -67,6 +67,10 @@ table {
 	font-size: 16px;
 	cursor: pointer;
 	display: flex;
+}
+
+.book-details .close-btn {
+	background-color: rgb(253, 93, 35,0.7);
 }
 
 .long-text {
@@ -136,7 +140,7 @@ table {
 	cursor: pointer;
 }
 
-label {
+.book-details label {
 	display: flex;
 	flex-direction: column;
 	margin: 10px 0;
@@ -144,7 +148,7 @@ label {
 	color: #8a2be2;
 }
 
-input[type='date'] {
+.book-details input[type='date'] {
 	margin: 10px 0;
 	padding: 5px;
 	font-size: 1.2rem;
@@ -152,7 +156,7 @@ input[type='date'] {
 	border-radius: 5px;
 }
 
-textarea {
+.book-details textarea {
 	margin: 10px 0;
 	padding: 5px;
 	font-size: 1.2rem;
@@ -160,7 +164,7 @@ textarea {
 	border-radius: 5px;
 }
 
-button {
+.book-details button {
 	margin: 10px 0;
 	padding: 10px;
 	font-size: 1.2rem;
@@ -171,7 +175,7 @@ button {
 	cursor: pointer;
 }
 
-button:hover {
+.book-details button:hover {
 	background-color: #7b1fa2;
 }
 

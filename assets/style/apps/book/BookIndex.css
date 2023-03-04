@@ -1,0 +1,13 @@
+.book-index {
+    display:flex;
+    flex-direction: column;
+}
+
+.btn-search-toggle {
+    width:200px;
+}
+
+.book-nav {
+    width: 200px;
+    align-self:center;
+}

@@ -5,7 +5,8 @@ export const utilService = {
     animateCSS,
     randSender,
     makeLorem,
-    randStatus
+    randStatus,
+    getPriceDisplay,
 }
 
 
@@ -65,4 +66,20 @@ function makeLorem(length = 10) {
 function randStatus(){
   const states = ['Inbox', 'Sent', 'Drafts', 'Trash', 'All']
   return states[Math.floor(Math.random() * states.length)]
+}
+
+
+
+function getPriceDisplay(listPrice) {
+  const symbol = {
+    USD: '$',
+    EUR: '€',
+    ILS: '₪',
+  }
+
+  const price = listPrice.amount
+  const currencyCode = symbol[listPrice.currencyCode]
+  const priceStr = (currencyCode ? currencyCode : '') + price
+
+  return priceStr
 }

@@ -11,12 +11,12 @@ import emailPreview from './EmailPreview.js'
 
 export default {
     name: 'emailList',
-    props: ['emails'],
+    props: ['emails', 'email'],
     template:`
         <section class="email-list-main">
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >
-                <emailPreview :email="email" @remove="deleteEmail"/>
+                <emailPreview :email="email" @remove="deleteEmail" @addToStars="addToStars" @addToTrash="addToTrash" @addToArchive="addToArchive" @addToRead="addToRead" @renderDetails="renderDetails(id)"/>
             </li>
         </ul>
         </section>
@@ -24,10 +24,31 @@ export default {
     data(){
         return{
             filterBy: '', /*********TODO: לטפל בחיפוש */
-            email: null,  
+            /*email: null,  */
         }
     },
     methods: {
+        updateIn(){
+            this.$emit('updateIn')
+        },
+        addToStars(){
+            this.$emit('addToStars')
+        },
+        addToRead(id){
+            this.$emit('addToRead', id)
+        },
+        renderDetails(id){
+            console.log('renderDetails list')
+            this.$emit('renderDetails', id)
+        },
+        addToTrash(email){
+            console.log('addToTrash LIST')
+            this.$emit(`addToTrash`, email)
+        },
+        addToArchive(){
+            console.log('addToArchive LIST')
+            this.$emit('addToArchive')
+        },
         select(emailId) {
             this.$router.push('/email/'+ emailId)
         },
@@ -37,10 +58,6 @@ export default {
         filterByTxt(){
             this.$emit('filterByTxt', this.filterBy)
         },
-    },
-    created() {
-        emailService.query()
-             .then(email => this.email = email)
     },
     components: {
         emailPreview,

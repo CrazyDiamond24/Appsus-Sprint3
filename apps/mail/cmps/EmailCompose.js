@@ -7,7 +7,7 @@ export default {
     template: `
     <button class="email-compose-btn" @click="openModal" v-html="getSvg('compose_edit')"></button>
     <form class="email-compose-container" v-show='this.isActivated'>
-        <header>New Message <div class="email-compose-close" @click="addToDrafts(this.email)">x</div></header>
+        <header>New Message <div class="email-compose-close" @click="addToDrafts">x</div></header>
         <div class="email-compose-body">
             <input type="email" placeholder="To" v-model="newEmail.to">
             <input type="text" placeholder="Subject" v-model="newEmail.subject">
@@ -24,6 +24,12 @@ export default {
         }
     },
     methods: {
+        addToDrafts(){
+            this.closeModal()
+            this.newEmail.isDraft = true
+            this.addEmail()
+            this.$emit('addToDrafts')
+        },
         checkCompose() {
             if (!this.newEmail.to) {
                 alert('Error: Please specify at least one recipient.')
@@ -45,6 +51,10 @@ export default {
         closeModal() {
             this.isActivated = false
         },
+        addEmail(){
+            console.log('addEmail SIDE BAR')
+            this.$emit('addEmail', this.email)
+        },
         setNewEmptyEmail() {
             this.newEmail = emailService.getEmptyEmail()
         },
@@ -63,10 +73,5 @@ export default {
         getSvg(iconName) {
             return svgService.getSvg(iconName) + ' Compose'
         },
-        addToDrafts() {
-            this.closeModal()
-            this.newEmail.sentAt = Date.now()
-            emailService.addToDrafts(this.newEmail)
-        }
     },
 }

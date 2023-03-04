@@ -2,18 +2,15 @@ import { utilService } from './../../../services/util.service.js'
 import { storageService } from './../../../services/async-storage.service.js'
 
 const EMAIL_STORAGE_KEY = 'emailDB'
-const TRASH_STORAGE_KEY = 'trashDB'
-const DRAFT_STORAGE_KEY = 'draftDB'
-const STAR_STORAGE_KEY = 'starDB'
 const loggedinUser = {
     email: 'user@appsus.com',
     fullname:'MahatmaAppsus'
 }
 
 _createEmail()
-_createTrash()
-_createDrafts()
-_createStars()
+//_createTrash()
+//_createDrafts()
+//_createStars()
 
 /*
 const email = {
@@ -32,11 +29,6 @@ export const emailService = {
     saveEmail,
     query,
     remove,
-    queryTrash,
-    queryDrafts,
-    queryStars,
-    addToStars,
-    addToDrafts,
 }
 
 function _createRandomEmails(id, subject, body, to, status) {
@@ -54,6 +46,7 @@ function _createRandomEmails(id, subject, body, to, status) {
         isTrash: false,
         isDraft: false,
         isSent: false,
+        isArchive: false,
     }
 
 }
@@ -103,6 +96,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -120,6 +114,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -135,6 +130,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -153,6 +149,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -167,6 +164,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false, 
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -183,6 +181,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -206,6 +205,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -223,6 +223,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -238,6 +239,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -256,6 +258,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -270,6 +273,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false, 
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -286,6 +290,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -301,6 +306,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -319,6 +325,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -333,6 +340,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false, 
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -349,6 +357,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -372,6 +381,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -389,6 +399,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -404,6 +415,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -422,6 +434,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -436,6 +449,7 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false, 
+            isArchive: false,
         },
         {
             id: utilService.makeId(),
@@ -452,7 +466,220 @@ function _createEmail(){
             isTrash: false,
             isDraft: false,
             isSent: false,
+            isArchive: false,
         },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: utilService.randSender(),
+            to: loggedinUser.email,
+            isStar: false,
+            isTrash: true,
+            isDraft: false,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: utilService.randSender(),
+            to: loggedinUser.email,
+            isStar: false,
+            isTrash: true,
+            isDraft: false,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: utilService.randSender(),
+            to: loggedinUser.email,
+            isStar: false,
+            isTrash: true,
+            isDraft: false,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: utilService.randSender(),
+            to: loggedinUser.email,
+            isStar: false,
+            isTrash: true,
+            isDraft: false,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: null,
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: true,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: null,
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: true,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: null,
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: true,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: null,
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: true,
+            isSent: false,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: false,
+            isSent: true,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: false,
+            isSent: true,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: false,
+            isSent: true,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: false,
+            isSent: true,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: false,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: loggedinUser.email,
+            to: utilService.randSender(),
+            isStar: false,
+            isTrash: false,
+            isDraft: false,
+            isSent: true,
+            isArchive: false,
+        },
+        {
+            id: utilService.makeId(),
+            subject: utilService.makeLorem(2),
+            body: utilService.makeLorem(14),
+            isRead: true,
+            sentAt: Date.now(),
+            removedAt: null,
+            from: utilService.randSender(),
+            to: loggedinUser.email,
+            isStar: false,
+            isTrash: false,
+            isDraft: false,
+            isSent: false,
+            isArchive: true,
+        },
+
+        
     ]
     utilService.saveToStorage(EMAIL_STORAGE_KEY, emails)
 }
@@ -492,173 +719,3 @@ function remove(id) {
 function query() {
     return storageService.query(EMAIL_STORAGE_KEY).then((emails) => { return emails })
 }
-
-function _createTrash(){
-        var trashEmails = [
-        {
-            id: utilService.makeId(),
-            subject: utilService.makeLorem(2),
-            body: utilService.makeLorem(14),
-            isRead: false,
-            sentAt: Date.now(),
-            removedAt: null,
-            from: utilService.randSender(),
-            to: loggedinUser.email,
-            isStar: false,
-            isTrash: false,
-            isDraft: false,
-            isSent: false,
-        },
-        {
-            id: utilService.makeId(),
-            subject: utilService.makeLorem(2),
-            body: utilService.makeLorem(14),
-            isRead: false,
-            sentAt: Date.now(),
-            removedAt: null,
-            from: utilService.randSender(),
-            to: loggedinUser.email,
-            isStar: false,
-            isTrash: false,
-            isDraft: false,
-            isSent: false,
-        },
-        {
-            id: utilService.makeId(),
-            subject: utilService.makeLorem(2),
-            body: utilService.makeLorem(14),
-            isRead: false,
-            sentAt: Date.now(),
-            removedAt: null,
-            from: utilService.randSender(),
-            to: loggedinUser.email,
-            isStar: false,
-            isTrash: false,
-            isDraft: false,
-            isSent: false,
-        },
-    ]
-    utilService.saveToStorage(TRASH_STORAGE_KEY, trashEmails)
-}
-
-function queryTrash() {
-    return storageService.query(TRASH_STORAGE_KEY)
-        .then(tEmails => { return tEmails })
-}
-
-function _createDrafts(){
-    var draftEmails = [
-    {
-        id: utilService.makeId(),
-        subject: utilService.makeLorem(2),
-        body: utilService.makeLorem(14),
-        isRead: false,
-        sentAt: Date.now(),
-        removedAt: null,
-        from: utilService.randSender(),
-        to: loggedinUser.email,
-        isStar: false,
-        isTrash: false,
-        isDraft: false,
-        isSent: false,
-    },
-    {
-        id: utilService.makeId(),
-        subject: utilService.makeLorem(2),
-        body: utilService.makeLorem(14),
-        isRead: false,
-        sentAt: Date.now(),
-        removedAt: null,
-        from: utilService.randSender(),
-        to: loggedinUser.email,
-        isStar: false,
-        isTrash: false,
-        isDraft: false,
-        isSent: false,
-    },
-    {
-        id: utilService.makeId(),
-        subject: utilService.makeLorem(2),
-        body: utilService.makeLorem(14),
-        isRead: false,
-        sentAt: Date.now(),
-        removedAt: null,
-        from: utilService.randSender(),
-        to: loggedinUser.email,
-        isStar: false,
-        isTrash: false,
-        isDraft: false,
-        isSent: false,
-    },
-]
-utilService.saveToStorage(DRAFT_STORAGE_KEY, draftEmails)
-}
-
-function queryDrafts() {
-return storageService.query(DRAFT_STORAGE_KEY)
-    .then(dEmails => { return dEmails })
-}
-
-function addToDrafts(email){
-    console.log('email.service: addToStars')
-    storageService.post(DRAFT_STORAGE_KEY, email)
-}
-
-function _createStars(){
-    var starEmails = [
-    {
-        id: utilService.makeId(),
-        subject: utilService.makeLorem(2),
-        body: utilService.makeLorem(14),
-        isRead: false,
-        sentAt: Date.now(),
-        removedAt: null,
-        from: utilService.randSender(),
-        to: loggedinUser.email,
-        isStar: false,
-        isTrash: false,
-        isDraft: false,
-        isSent: false,
-    },
-    {
-        id: utilService.makeId(),
-        subject: utilService.makeLorem(2),
-        body: utilService.makeLorem(14),
-        isRead: false,
-        sentAt: Date.now(),
-        removedAt: null,
-        from: utilService.randSender(),
-        to: loggedinUser.email,
-        isStar: false,
-        isTrash: false,
-        isDraft: false,
-        isSent: false,
-    },
-    {
-        id: utilService.makeId(),
-        subject: utilService.makeLorem(2),
-        body: utilService.makeLorem(14),
-        isRead: false,
-        sentAt: Date.now(),
-        removedAt: null,
-        from: utilService.randSender(),
-        to: loggedinUser.email,
-        isStar: false,
-        isTrash: false,
-        isDraft: false,
-        isSent: false,
-    },
-    ]
-    utilService.saveToStorage(STAR_STORAGE_KEY, starEmails)
-}
-
-function queryStars() {
-return storageService.query(STAR_STORAGE_KEY)
-    .then(sEmails => { return sEmails })
-}
-
-function addToStars(email){
-    console.log('email.service: addToStars')
-    storageService.post(STAR_STORAGE_KEY, email)
-}
-

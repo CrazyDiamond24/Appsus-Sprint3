@@ -12,7 +12,7 @@
     background-color: white;
 }
 
-p {
+.email-preview-container p {
     margin: 0 0 0em;
     padding: 10px;
     margin-inline-end: 10px;
@@ -28,7 +28,6 @@ p {
 }
 
 .time {
-    background-color: #fff;
     /*position: relative;*/
     /*padding:0 0 0 1.5rem;*/
     margin-left: 120px;

@@ -6,7 +6,7 @@ export default {
         <img class="logo-img" src="./assets/img/A.png" alt="A"/>
         <img class="logo-img" src="./assets/img/P.png" alt="P"/>
         <img class="logo-img" src="./assets/img/P.png" style="margin-right: -5px;" alt="P"/>
-        <img class="logo-img" src="./assets/img/S.png" alt="P"/>
+        <img class="logo-img" src="./assets/img/S.png" alt="S"/>
         <img class="logo-img" src="./assets/img/U.png" style="margin-right: -5px;" alt="S"/>
         <img class="logo-img" src="./assets/img/S.png" alt="U"/>
       </div>

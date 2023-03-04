@@ -6,11 +6,18 @@
   overflow: hidden;
 }
 
-.about-page-active {
-  overflow: hidden;
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: transparent;
 }
 
-
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+::-webkit-scrollbar:horizontal {
+  height: 1px;
+  bottom: 0;
+}
 
 .about-container {
   display: flex;

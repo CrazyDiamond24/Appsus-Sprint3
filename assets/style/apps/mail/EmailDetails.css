@@ -1,0 +1,36 @@
+.email-details{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 1em;
+    padding: 2em;
+    height: max-content;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.mail-details h1.subject{
+    grid-area: subject;
+    margin: 0;
+}
+
+.mail-details h3.username{
+    grid-area: username;
+}
+
+.mail-details .mail-from{
+    grid-area: from;
+    grid-column: 2;
+}
+
+.mail-details .mail-body{
+    grid-area: body;
+}
+
+.mail-details .arrow-btn{
+    width: fit-content;
+    grid-area: arrow;
+    /* margin-inline-start: auto; */
+    grid-column: 1;
+    
+}

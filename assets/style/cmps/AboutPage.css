@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
   background-color: transparent;
 }
 
@@ -15,7 +15,7 @@
   background-color: transparent;
 }
 ::-webkit-scrollbar:horizontal {
-  height: 1px;
+  height: 0px;
   bottom: 0;
 }
 

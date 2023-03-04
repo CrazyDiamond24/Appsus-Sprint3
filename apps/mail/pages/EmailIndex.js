@@ -36,8 +36,7 @@ export default {
 
         <emailDetails
         v-if="emailId" 
-        :emailId="emailId"
-        @back="back"/>
+        :emailId="emailId"/>
         </section>
     </section>
     `,

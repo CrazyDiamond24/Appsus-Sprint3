@@ -1,14 +1,7 @@
-.mail-details{
+.email-details{
     display: grid;
-    grid-template-areas: 
-    /* "arrow arrow" */
-    " arrow subject subject btns"
-    "username from from from"
-    "body body body body"
-    ;
-    grid-template-columns: auto 1fr ;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    /* width: fit-content; */
     column-gap: 1em;
     padding: 2em;
     height: max-content;

@@ -37,7 +37,7 @@ const routerOptions = {
       ],
     },
     {
-      path: '/email/',
+      path: '/email',
       component: EmailIndex,
       children: [
         {

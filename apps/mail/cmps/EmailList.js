@@ -8,12 +8,14 @@
 }*/
 import { emailService } from './../services/email.service.js'
 import emailPreview from './EmailPreview.js'
+import emailFilter from './EmailFilter.js'
 
 export default {
     name: 'emailList',
     props: ['emails', 'email'],
     template:`
         <section class="email-list-main">
+            <emailFilter />
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >
                 <emailPreview :email="email" @remove="deleteEmail" @addToStars="addToStars" @addToTrash="addToTrash" @addToArchive="addToArchive" @addToRead="addToRead" @renderDetails="renderDetails(id)"/>

@@ -1,0 +1,202 @@
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+.book-details {
+	background-color: rgb(254, 242, 242);
+	border-radius: 23px;
+	border: none;
+	margin: 40px;
+	display: flex;
+}
+
+
+
+.book-details table {
+    border-collapse: collapse;
+  }
+  
+  .book-details td {
+    border: 1px solid rgb(76, 74, 74,0.2);
+    padding: 8px;
+    text-align: left;
+  }
+  
+ .book-details td,
+  th {
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+
+.book-details img {
+	/* width: 50%; */
+	height:60%;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.book-details table {
+	border-collapse: collapse;
+	width: 80%;
+}
+
+.book-details td {
+	padding: 8px;
+	text-align: left;
+}
+
+.book-details .on-sale-label {
+	position: absolute;
+	background-image: url(https://starpng.com/public/uploads/preview/modern-sale-offer-label-png-21566900175jks9g8bd8t.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 150px;
+	height: 150px;
+}
+
+.book-details button {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	display: flex;
+}
+
+.book-details .close-btn {
+	background-color: rgb(253, 93, 35,0.7);
+}
+
+.long-text {
+	max-width: 350px;
+	overflow: auto;
+	max-height: 150px;
+	transition: max-width 1s ease-out;
+}
+
+.long-text::-webkit-scrollbar {
+	width: 8px;
+	background-color: #f5f5f5;
+}
+
+.long-text::-webkit-scrollbar-thumb {
+	background-color: #b386e8;
+	border-radius: 10px;
+}
+
+.long-text::-webkit-scrollbar-thumb:hover {
+	background-color: #9c62b0;
+}
+
+.user-msg {
+	background-color: lightgray;
+	padding: 1em;
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+}
+.user-msg.success {
+	background-color: lightgreen;
+}
+.user-msg.error {
+	background-color: lightcoral;
+}
+
+.user-msg button {
+	float: right;
+}
+
+.review-add {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+	padding: 20px;
+	background-color: rgb(254, 242, 242);
+	border-radius: 10px;
+}
+
+.readerName {
+	margin: 10px 0;
+	padding: 5px;
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.rating {
+	margin: 10px 0;
+	font-size: 2rem;
+	color: #8a2be2;
+}
+
+.rating span {
+	cursor: pointer;
+}
+
+.book-details label {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	font-size: 1.2rem;
+	color: #8a2be2;
+}
+
+.book-details input[type='date'] {
+	margin: 10px 0;
+	padding: 5px;
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.book-details textarea {
+	margin: 10px 0;
+	padding: 5px;
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.book-details button {
+	margin: 10px 0;
+	padding: 10px;
+	font-size: 1.2rem;
+	background-color: #8a2be2;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.book-details button:hover {
+	background-color: #7b1fa2;
+}
+
+.review-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.review-preview-container {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(128, 128, 128, 0.3);
+	border-radius: 20px;
+	padding: 5px;
+	height: auto;
+	width: 200px;
+	margin-inline-end: 30px;
+}
+
+.review-preview-container button {
+	width: 50px;
+}

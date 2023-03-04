@@ -4,6 +4,7 @@
     display: grid;
     flex-direction: column;
     list-style-type: none;
+    margin-top: 60px;
 }
 
 .email-list-main ul {

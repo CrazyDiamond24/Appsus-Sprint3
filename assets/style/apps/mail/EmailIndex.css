@@ -6,7 +6,15 @@ body {
     display: grid;
     height: 90vh;
     width: 100%;
-    padding-top: 5%;
+    padding-top: 0.5%;
     justify-content: space-between;
     grid-template-columns: 20px 256px 1fr 10px;
+}
+
+.email-index-search-menu {
+    display: flex;
+}
+
+.email-index-search-menu img {
+    height: 20px;
 }

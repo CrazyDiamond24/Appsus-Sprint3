@@ -26,18 +26,4 @@ export default {
       </div>
     </section>
     `,
-  methods: {
-    activateAboutPage() {
-      document.body.classList.add('about-page-active')
-    },
-    deactivateAboutPage() {
-      document.body.classList.remove('about-page-active')
-    },
-  },
-  mounted() {
-    this.activateAboutPage()
-  },
-  destroyed() {
-    this.deactivateAboutPage()
-  },
 }

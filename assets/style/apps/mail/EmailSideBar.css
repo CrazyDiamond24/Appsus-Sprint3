@@ -29,7 +29,7 @@
 }
 
 .email-sidebar-compose, .email-sidebar-sidebtn {
-    background-color: rgb(246, 248, 252);
+    background-color: rgb(234, 240, 250);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -38,4 +38,8 @@
 
 .email-sidebar-search-btn {
     cursor: pointer;
+}
+
+.email-sidebar-sidebtn button {
+    background-color: rgb(234, 240, 250);
 }

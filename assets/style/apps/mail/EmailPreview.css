@@ -4,7 +4,7 @@
     height: 2.5rem;
     border-bottom: .5px solid #eceff1;
     cursor: pointer;
-    background-color: rgb(246, 248, 252);
+    background-color: rgb(230, 236, 248);
 }
 
 .email-preview-container.isRead {

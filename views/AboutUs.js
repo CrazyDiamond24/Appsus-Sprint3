@@ -1,9 +1,6 @@
 export default {
   template: `
-    <section class="about-page"
-      @click="activateAboutPage"
-      @mouseleave="deactivateAboutPage"
-    >
+    <section class="about-page">
       <div class="sunflower sunflower-topright"></div>
       <div class="sunflower sunflower-bottomleft"></div>
       <div class="about-container">

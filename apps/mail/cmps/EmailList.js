@@ -63,5 +63,6 @@ export default {
     },
     components: {
         emailPreview,
+        emailFilter 
     },
 }

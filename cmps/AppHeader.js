@@ -2,14 +2,7 @@ export default {
   template: `
     <header class="app-header">
       <RouterLink to="/">
-        <div class="logo-container">
-        <img class="logo-img" src="./assets/img/A.png" alt="A"/>
-        <img class="logo-img" src="./assets/img/P.png" alt="P"/>
-        <img class="logo-img" src="./assets/img/P.png" style="margin-right: -5px;" alt="P"/>
-        <img class="logo-img" src="./assets/img/S.png" alt="S"/>
-        <img class="logo-img" src="./assets/img/U.png" style="margin-right: -5px;" alt="U"/>
-        <img class="logo-img" src="./assets/img/S.png" alt="S"/>
-      </div>
+      <h2 class="temp-logo">Appsus</h2>
     </RouterLink>
       <nav>
         <RouterLink v-for="(route, idx) in routes" :to="route.path" :title="route.title" :key="idx" exact-active-class="active-link">{{route.title}} </RouterLink>
@@ -33,3 +26,15 @@ export default {
     },
   },
 }
+
+
+
+
+// <!-- <div class="logo-container">
+// <img class="logo-img" src="./assets/img/A.png" alt="A"/>
+// <img class="logo-img" src="./assets/img/P.png" alt="P"/>
+// <img class="logo-img" src="./assets/img/P.png" style="margin-right: -5px;" alt="P"/>
+// <img class="logo-img" src="./assets/img/S.png" alt="S"/>
+// <img class="logo-img" src="./assets/img/U.png" style="margin-right: -5px;" alt="U"/>
+// <img class="logo-img" src="./assets/img/S.png" alt="S"/>
+// </div> -->

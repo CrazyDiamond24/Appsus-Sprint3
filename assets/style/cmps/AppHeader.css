@@ -12,20 +12,21 @@
 }
 
 .logo-img {
-  height:50px;
+  height:40px;
 }
 
 .logo-container {
   display: flex;
   gap: 10px;
   margin-inline-start: 40px;
+  padding: 5px;
 }
 
 .app-header nav {
   display: flex;
   gap: 1em;
   align-items: center;
-  margin-inline-end: 30px;
+  margin-inline-end: 40px;
 }
 
 .app-header nav a {

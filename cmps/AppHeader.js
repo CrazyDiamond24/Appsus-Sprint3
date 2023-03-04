@@ -23,6 +23,7 @@ export default {
         { path: '/notes', title: 'Notes' },
         { path: '/email/list', title: 'E-mail' },
         { path: '/book', title: 'Books' },
+        { path: '/about', title: 'About' },
       ],
     }
   },

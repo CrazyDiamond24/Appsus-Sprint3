@@ -467,7 +467,7 @@ function saveEmail(email, append = true) {
 function getEmptyEmail() {
     return {
         id: utilService.makeId(),
-        subject: '(no subject)',
+        subject: '',
         body: '',
         isRead: true,
         sentAt: null,

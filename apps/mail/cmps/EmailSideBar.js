@@ -1,3 +1,5 @@
+import { svgService } from './../services/svg.service.js'
+
 export default {
     name: 'emailSideBar',
     template: `
@@ -22,6 +24,9 @@ export default {
         },
         renderStars(){
             this.$emit('renderStars')
+        },
+        getSvg(iconName) {
+            return svgService.getSvg(iconName)
         },
     }
 }

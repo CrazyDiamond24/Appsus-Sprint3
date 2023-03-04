@@ -1,4 +1,5 @@
 import { emailService } from './../services/email.service.js'
+import { svgService } from './../services/svg.service.js'
 
 import emailFilter from './../cmps/EmailFilter.js'
 import emailSideBar from './../cmps/EmailSideBar.js'
@@ -9,13 +10,14 @@ export default {
     name: 'emailIndex',
     template: `
     <section class="email-index">
-        <div class="email-filter">
-        </div>
-
-        <!---<div class="main-view">
-        <RouterView />
-        </div>-->
-        
+        <section>
+            <header class="email-index-header">
+                <article class="email-index-search-menu">
+                    <i v-html="getSvg('menu')"></i>
+                    <img src="./../../../assets/img/logo.png">
+                    <h1>Mail</h1>
+                </article>
+        </section>
 
         <section>
         <emailCompose 
@@ -64,7 +66,10 @@ export default {
         },
         addToDrafts(email) {
             emailService.addToDrafts(email)
-        }
+        },
+        getSvg(iconName) {
+            return svgService.getSvg(iconName)
+        },
     },
     created() {
         //this.emails = emailService.query()

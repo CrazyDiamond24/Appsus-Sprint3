@@ -25,14 +25,17 @@ export default {
     },
     methods: {
         checkCompose() {
-            if (this.newEmail.to === '(no subject)') {
+            if (!this.newEmail.to) {
                 alert('Error: Please specify at least one recipient.')
                 return
             }
             if (!this.newEmail.subject && !this.newEmail.body){
                 var boolSend = confirm('Send this message without a subject or text in the body?')
                 if(!boolSend) return
-                else this.addMail()
+                else {
+                    this.newEmail.subject = '(no subject)'
+                    this.addMail()
+                }
             }
         },
         openModal() {

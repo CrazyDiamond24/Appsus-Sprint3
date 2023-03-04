@@ -7,8 +7,8 @@ export default {
         <img class="logo-img" src="./assets/img/P.png" alt="P"/>
         <img class="logo-img" src="./assets/img/P.png" style="margin-right: -5px;" alt="P"/>
         <img class="logo-img" src="./assets/img/S.png" alt="S"/>
-        <img class="logo-img" src="./assets/img/U.png" style="margin-right: -5px;" alt="S"/>
-        <img class="logo-img" src="./assets/img/S.png" alt="U"/>
+        <img class="logo-img" src="./assets/img/U.png" style="margin-right: -5px;" alt="U"/>
+        <img class="logo-img" src="./assets/img/S.png" alt="S"/>
       </div>
     </RouterLink>
       <nav>

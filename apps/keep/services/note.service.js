@@ -66,43 +66,15 @@ function _createNotes() {
       {
         id: utilService.makeId(),
         createdAt: Date.now(),
-        type: 'NoteImg',
+        type: 'NoteVid',
         isPinned: false,
         style: {
-          backgroundColor: '#aecbfa',
+          backgroundColor: '#fff475', //yellow
         },
         info: {
-          url: 'https://raw.githubusercontent.com/CrazyDiamond24/myDrawings/main/img/6.jpg',
-          title: 'My First',
-          txt: 'First attempt at realistic drawing.',
-        },
-      },
-      {
-        id: utilService.makeId(),
-        createdAt: Date.now(),
-        type: 'NoteImg',
-        isPinned: false,
-        style: {
-          backgroundColor: '#fdcfe8', //pink
-        },
-        info: {
-          url: 'https://lp-cms-production.imgix.net/image_browser/Amsterdam%201.jpg',
-          title: 'Holiday',
-          txt: 'Roger Waters will be there in April.',
-        },
-      },
-      {
-        id: utilService.makeId(),
-        createdAt: Date.now(),
-        type: 'NoteImg',
-        isPinned: false,
-        style: {
-          backgroundColor: '#ccff90', //purple
-        },
-        info: {
-          url: 'https://www.gannett-cdn.com/presto/2022/09/30/PDTF/3eb55454-d73d-4d0f-b45a-a2af55e60263-Van_Gogh_SBM_013.jpg?crop=2399,1350,x0,y0&width=2399&height=1350&format=pjpg&auto=webp',
-          title: 'Van Gogh',
-          txt: '“Once upon a midnight dreary”',
+          url: 'https://www.youtube.com/watch?v=QxHkLdQy5f0',
+          title: 'Mood',
+          txt: 'Tchaikovsky - Waltz of the Flowers',
         },
       },
       {
@@ -125,7 +97,49 @@ function _createNotes() {
         type: 'NoteImg',
         isPinned: false,
         style: {
-          backgroundColor: '#a7ffeb', //blue-ish
+          backgroundColor: '#ccff90', //purple
+        },
+        info: {
+          url: 'https://www.gannett-cdn.com/presto/2022/09/30/PDTF/3eb55454-d73d-4d0f-b45a-a2af55e60263-Van_Gogh_SBM_013.jpg?crop=2399,1350,x0,y0&width=2399&height=1350&format=pjpg&auto=webp',
+          title: 'Van Gogh',
+          txt: '“Once upon a midnight dreary”',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#e8eaed', //gray
+        },
+        info: {
+          url: 'https://raw.githubusercontent.com/CrazyDiamond24/myDrawings/main/img/6.jpg',
+          title: 'My First',
+          txt: 'First attempt at realistic drawing.',
+        },
+      },
+
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteTxt',
+        isPinned: false,
+        style: {
+          backgroundColor: '#fff475', //yellow
+        },
+        info: {
+          txt: 'How I wish to go back. I miss everything about this magical city.',
+        },
+      },
+
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#d7aefb', //prpl
         },
         info: {
           url: 'https://cdn.prod.www.spiegel.de/images/c3d52839-0001-0004-0000-000001325849_w948_r1.778_fpx30_fpy55.jpg',
@@ -136,13 +150,33 @@ function _createNotes() {
       {
         id: utilService.makeId(),
         createdAt: Date.now(),
-        type: 'NoteTxt',
+        type: 'NoteTodo',
         isPinned: false,
         style: {
-          backgroundColor: '#ccff90', //greenish
+          backgroundColor: '#aecbfa', //sky blue
         },
         info: {
-          txt: 'How I wish to go back. I miss everything about this magical city.',
+          title: 'Shopping List',
+          todos: [
+            { txt: 'Avocado' },
+            { txt: 'Bread' },
+            { txt: 'Milk' },
+            { txt: 'Tomato' },
+          ],
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
+        type: 'NoteImg',
+        isPinned: false,
+        style: {
+          backgroundColor: '#fbbc04', //pink
+        },
+        info: {
+          url: 'https://images.fineartamerica.com/images/artworkimages/medium/1/sunflower-fields-van-gogh-david-pyatt.jpg',
+          title: 'Sunflowers',
+          txt: 'Golden beauties.',
         },
       },
       {
@@ -165,12 +199,12 @@ function _createNotes() {
         type: 'NoteImg',
         isPinned: false,
         style: {
-          backgroundColor: '#f5ee9e',
+          backgroundColor: '#ccff90', //green
         },
         info: {
-          url: 'https://c8.alamy.com/comp/DT2R77/neon-lights-on-the-sign-of-the-smokey-coffeeshop-where-taking-and-DT2R77.jpg',
-          title: 'Where Magic happens',
-          txt: 'Moon Rocks in the Moon Light.'
+          url: 'https://i.ytimg.com/vi/XtSnQyCHfFs/mqdefault.jpg',
+          title: 'Bedroom in Arles',
+          txt: 'Van Gogh Museum, Amsterdam',
         },
       },
       {
@@ -179,7 +213,7 @@ function _createNotes() {
         type: 'NoteVid',
         isPinned: false,
         style: {
-          backgroundColor: '#e6c9a8', //beige
+          backgroundColor: '#f28b82', //coral
         },
         info: {
           url: 'https://www.youtube.com/watch?v=CGzKnyhYDQI',
@@ -189,18 +223,32 @@ function _createNotes() {
       {
         id: utilService.makeId(),
         createdAt: Date.now(),
+        type: 'NoteVid',
+        isPinned: false,
+        style: {
+          backgroundColor: '#e6c9a8', //coral
+        },
+        info: {
+          url: 'https://www.youtube.com/watch?v=9E6b3swbnWg',
+          title: 'Chopin',
+          txt: 'Nocturne op.9 No.2'
+        },
+      },
+      {
+        id: utilService.makeId(),
+        createdAt: Date.now(),
         type: 'NoteTodo',
         isPinned: false,
         style: {
-          backgroundColor: '#aecbfa', //sky blue
+          backgroundColor: '#fff475', //yellow
         },
         info: {
-          title: 'Shopping List',
+          title: 'After Bootcamp',
           todos: [
-            { txt: 'Avocado' },
-            { txt: 'Bread' },
-            { txt: 'Milk' },
-            { txt: 'Tomato' },
+            { txt: 'Eat' },
+            { txt: 'Go on Vacation' },
+            { txt: 'Build something' },
+            { txt: 'Get better' },
           ],
         },
       },

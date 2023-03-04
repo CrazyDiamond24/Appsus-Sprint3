@@ -14,9 +14,9 @@ export default {
       colors: [
         '#ffffff',
         '#f28b82', //coral
-        '#fbbc04', //oragnge
+        '#fbbc04', //orange
         '#fff475', //yellow
-        '#ccff90', //gree
+        '#ccff90', //green
         '#a7ffeb', //blue
         '#cbf0f8', //light blue
         '#aecbfa', //sky blye

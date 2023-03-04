@@ -37,19 +37,20 @@
   
   .back-link {
     display: block;
-    max-width: 150px;
+    max-width: 100px;
     margin: 0 auto;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     text-align: center;
     color: white;
-    background-color: #2c3e50;
+    background-color: #2cad1b;
     border-radius: 0.5rem;
     text-decoration: none;
+    font-weight: bold;
   }
 
   .back-link:hover {
-    background-color: #34495e;
+    background-color: rgb(61, 196, 31);
     transition: background-color 0.2s ease-in-out;
   }
 

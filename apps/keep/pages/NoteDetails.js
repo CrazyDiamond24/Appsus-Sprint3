@@ -11,7 +11,7 @@ export default {
       <section>
       
         <NotePreview v-if="note" :note="note" @update-note="onUpdateNote" />
-        <RouterLink to="/notes" class="back-link" >Back to Notes</RouterLink>
+        <RouterLink to="/notes" class="back-link" >Save</RouterLink>
       </section>
     </div>
   </div>

@@ -29,6 +29,7 @@ export const emailService = {
     saveEmail,
     query,
     remove,
+    get,
 }
 
 function _createRandomEmails(id, subject, body, to, status) {

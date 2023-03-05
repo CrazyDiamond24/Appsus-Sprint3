@@ -1,35 +1,51 @@
-.email-details{
+.email-details-container{
     display: grid;
+    grid-template-areas:   
+    "arrow subject"
+    "username from"
+    "body body";
     grid-template-columns: auto 1fr;
     align-items: center;
-    column-gap: 1em;
     padding: 2em;
     height: max-content;
     background-color: white;
     border-radius: 10px;
+    font-family: Verdana;
+    width: 100%;
+    height: 90%;
+    margin-top: 40px;
+    border-radius: 15px;
+    gap: 30px;
+    align-content: start;
 }
 
-.mail-details h1.subject{
+.email-details-subject{
     grid-area: subject;
     margin: 0;
+    font-size: 30px;
 }
 
-.mail-details h3.username{
+.email-details-username{
     grid-area: username;
+    font-size: larger;
 }
 
-.mail-details .mail-from{
+.email-details-from{
     grid-area: from;
-    grid-column: 2;
+    font-size: larger;
 }
 
-.mail-details .mail-body{
+.email-details-body{
     grid-area: body;
 }
 
-.mail-details .arrow-btn{
+.email-details-arrow-btn{
     width: fit-content;
     grid-area: arrow;
-    /* margin-inline-start: auto; */
-    grid-column: 1;
+    margin-inline-start: auto; 
+    margin-inline-end: auto; 
+    height: fit-content;
+    border: none;
+    background-color: white;
+
 }

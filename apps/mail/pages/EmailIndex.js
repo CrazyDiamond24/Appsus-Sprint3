@@ -32,8 +32,7 @@ export default {
         @addToStars="addToStars" 
         @addToTrash="addToTrash"
         @addToArchive="addToArchive"
-        @addToRead="addToRead"
-        @renderDetails="renderDetails(id)"/>
+        @addToRead="addToRead"/>
 
         <emailDetails
         v-if="emailId" 
@@ -137,6 +136,9 @@ export default {
                     this.renderInbox()
             }
         },
+        backToMail(){
+            this.emailId = ''
+        },
         /*updateAllEmails(){
             console.log('INDEX updateAllEmails')
             emailService.query()
@@ -177,6 +179,8 @@ export default {
         eventBus.on('renderSent', this.renderSent)
         eventBus.on('renderStars', this.renderStars)
         eventBus.on('addToStars', this.addToStars)
+        eventBus.on('renderDetails', this.renderDetails)
+        eventBus.on('backToMail', this.backToMail)
         //eventBus.on('updateAllEmails', this.updateAllEmails)
     },
     components: {

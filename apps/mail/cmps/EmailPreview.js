@@ -8,13 +8,13 @@ export default {
     name: 'emailPreview',
     props: ['email'],
     template: `
-        <div class="email-preview-container" @click="setDetails(this.email)" :class="{isRead:!email.isRead}">
+        <div class="email-preview-container" :class="{isRead:!email.isRead}">
             <input type="checkbox" class="email-preview-checkbox"/>
             <i :key="email.id" :style="styleStar" class="check-star" v-html="getSvg('star')" @click="orgStars"></i>
-            <p class="email-preview from">{{email.from}}</p>
+            <p class="email-preview from" @click="setDetails(this.email)">{{email.from}}</p>
             <div class="prev">
-                <p class="email-preview subject">{{email.subject}}</p>
-                <p class="email-preview body">{{email.body}}</p>
+                <p class="email-preview subject" @click="setDetails(this.email)">{{email.subject}}</p>
+                <p class="email-preview body" @click="setDetails(this.email)">{{email.body}}</p>
             </div>
             <p class="email-preview time">{{formatTime(email)}}</p>
             <div class="email-preview icons">
@@ -33,8 +33,9 @@ export default {
     },
     methods: {
         renderDetails(){
-            console.log('renderDetails pre')
-            this.$emit('renderDetails', this.email.id)
+            console.log('renderDetails pre '+ this.email.id)
+            eventBus.emit('renderDetails', this.email.id)
+            //this.$emit('renderDetails', this.email.id)
         },
         formatTime(email){
             return i18Service.formatTime(email.sentAt)
@@ -59,7 +60,7 @@ export default {
             this.renderDetails()
             email.isRead = true
             emailService.saveEmail(email)
-            this.$router.push(`/email/${email.id}`)
+            //this.$router.push(`/email/${email.id}`)
             //this.$emit('renderDetails', this.email.id)
         },
         getSvg(iconName) {

@@ -10,7 +10,7 @@ export default {
             <emailFilter/>
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >
-                <emailPreview :email="email" @addToStars="addToStars" @addToTrash="addToTrash" @addToArchive="addToArchive" @addToRead="addToRead" @renderDetails="renderDetails(id)"/>
+                <emailPreview :email="email" @addToStars="addToStars" @addToTrash="addToTrash" @addToArchive="addToArchive" @addToRead="addToRead"/>
             </li>
         </ul>
         </section>

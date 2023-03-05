@@ -1,15 +1,18 @@
 /* imports */
 import { emailService } from './../services/email.service.js'
+import { svgService } from '../services/svg.service.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 
 export default {
+    name: 'emailDetails',
     props:['emailId'],
     template: `
-    <section className="email-details" v-if="email">
-         <button class="arrow-btn">Back</button>
-         <h1 class="subject">{{email.subject}}</h1>
-         <h3 class="username">{{formatUsername}} </h3>
-         <p class="mail-from">&lt;{{formatMail}}</p>
-         <p class="mail-body">{{email.body}}</p>
+    <section className="email-details-container" v-if="email">
+         <button class="email-details-arrow-btn" @click="backToMail" v-html="getSvg('back')"></button>
+         <h1 class="email-details-subject">{{email.subject}}</h1>
+         <h3 class="email-details-username">{{formatUsername}} </h3>
+         <p class="email-details-from">&lt;{{formatMail}}</p>
+         <p class="email-details-body">{{email.body}}</p>
     </section>
     `,
     data() {
@@ -19,7 +22,12 @@ export default {
         }
     },
     methods: {
-
+        getSvg(iconName) {
+            return svgService.getSvg(iconName)
+        },
+        backToMail() {
+            eventBus.emit('backToMail')
+        }
     },
     computed: {
         formatUsername(){

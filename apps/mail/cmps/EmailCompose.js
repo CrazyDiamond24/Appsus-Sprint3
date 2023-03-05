@@ -44,6 +44,7 @@ export default {
                     this.sendEmail()
                 }
             }
+            else this.sendEmail()
         },
         openModal() {
             this.setNewEmptyEmail()

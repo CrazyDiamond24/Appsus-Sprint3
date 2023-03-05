@@ -9,7 +9,7 @@ export default {
         </div>
         <div class="about-text">
           <h2>Almog Ohayon</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel euismod turpis. Vivamus interdum consectetur commodo. Aliquam tristique neque quis lectus semper ultricies. Curabitur scelerisque velit id augue bibendum, sed dictum lorem vestibulum. Fusce gravida, risus in luctus rhoncus, orci dolor eleifend mauris, et auctor metus augue sit amet mauris.</p>
+          <p>Hi, I'm Almog! I love HTML and CSS, but JS the most. I create music and draw digital art. I like learning languages and going to parties around the world! My paragraph is not as long as Rania's so I continue to write random things yeyy! My paragraph is not as long as Rania's so I continue to write random things yeyy! My paragraph is not as long as Rania's so I continue to write random things yeyy!</p>
         </div>
       </div>
       <div class="about-container">

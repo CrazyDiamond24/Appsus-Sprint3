@@ -1,4 +1,6 @@
+/* imports */
 import { svgService } from './../services/svg.service.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 import emailCompose from './EmailCompose.js'
 
 export default {
@@ -21,7 +23,7 @@ export default {
         <section class="email-sidebar-sidebtn">
             <button  @click="renderInbox" v-html="getSvg('inbox')"><span class="inbox-count">0</span></button>
             <button   @click="renderStars" v-html="getSvg('starmenu')"></button>
-            <button v-html="getSvg('sent')"></button>
+            <button @click="renderSent" v-html="getSvg('sent')"></button>
             <button  @click="renderDrafts" v-html="getSvg('draft')"><span class="drafts-count">0</span></button>
             <button  @click="renderTrash" v-html="getSvg('delete')"> </button>
             <button @click="renderAllEmails">All</button>
@@ -53,7 +55,11 @@ export default {
         renderStars(){
             this.updateSpace('starSpace')
             console.log('renderStars SIDE BAR')
-            this.$emit('renderStars')
+            eventBus.emit('renderStars')
+        },
+        renderSent(){
+            this.updateSpace('sentSpace')
+            eventBus.emit('renderSent')
         },
         renderAllEmails(){
             this.updateSpace('allSpace')

@@ -1,12 +1,4 @@
-/*export default {
-    template: `
-        <section>
-            <h2>List</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis enim rem porro delectus. Quos expedita ipsam repellendus voluptas quas, nam ea eligendi veniam ullam, modi impedit eveniet quia quaerat molestias?</p>
-        </section>
-    `,
-}*/
-import { emailService } from './../services/email.service.js'
+/* imports */
 import emailPreview from './EmailPreview.js'
 import emailFilter from './EmailFilter.js'
 
@@ -15,10 +7,10 @@ export default {
     props: ['emails', 'email'],
     template:`
         <section class="email-list-main">
-            <emailFilter />
+            <emailFilter/>
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-list-container" @click="select(email.id)" >
-                <emailPreview :email="email" @remove="deleteEmail" @addToStars="addToStars" @addToTrash="addToTrash" @addToArchive="addToArchive" @addToRead="addToRead" @renderDetails="renderDetails(id)"/>
+                <emailPreview :email="email" @addToStars="addToStars" @addToTrash="addToTrash" @addToArchive="addToArchive" @addToRead="addToRead" @renderDetails="renderDetails(id)"/>
             </li>
         </ul>
         </section>
@@ -30,6 +22,10 @@ export default {
         }
     },
     methods: {
+        filterByTxt(myFilter){
+            console.log('filterByTxt EmailList myFilter:' + myFilter)
+            this.$emit('filterByTxt', myFilter)
+        },
         updateIn(){
             this.$emit('updateIn')
         },
@@ -53,9 +49,6 @@ export default {
         },
         select(emailId) {
             this.$router.push('/email/'+ emailId)
-        },
-        deleteEmail(emailId){
-            this.$emit('remove', emailId)
         },
         filterByTxt(){
             this.$emit('filterByTxt', this.filterBy)

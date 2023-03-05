@@ -1,6 +1,7 @@
+/* imports */
 import { emailService } from './../services/email.service.js'
 import { svgService } from './../services/svg.service.js'
-
+import { eventBus } from './../../../services/event-bus.service.js'
 import emailFilter from './../cmps/EmailFilter.js'
 import emailSideBar from './../cmps/EmailSideBar.js'
 import emailList from './../cmps/EmailList.js'
@@ -136,25 +137,47 @@ export default {
                     this.renderInbox()
             }
         },
+        /*updateAllEmails(){
+            console.log('INDEX updateAllEmails')
+            emailService.query()
+                .then(e => this.allEmails = e)
+        },*/
         updateSpace(locationPage){
             console.log('INDEX updateSpace' + locationPage)
             this.space = locationPage
         },
-        addEmail(email){
-            console.log(' addEmail INDEX')
-            emailService.saveEmail(email, false)
+        addEmail(myEmail){
+            console.log(' addEmail INDEX: ' )
+            console.dir(myEmail)
+            emailService.saveEmail(myEmail, false)
+                .then(e => this.allEmails.push(e))
+                console.log(this.allEmails)
             this.updateIn()
             /*.then(() => {
                 eventBus.emit('showMsg', 'Send successfully')
                 eventBus.emit('refresh')
             })*/
         },
+        filterByTxt(myFilter){
+            console.log('filterByTxt INDEX, myFilter:'+ myFilter)
+            const regex = new RegExp(myFilter, 'i')
+            this.emails = this.emails.filter(email => regex.test(email.body) || regex.test(email.subject) || regex.test(email.from) || regex.test(email.to))
+        }
     },
     created() {
         emailService.query()
             .then(emails => this.emails = emails)
+
         emailService.query()
-            .then(emails => this.allEmails = emails)
+            .then(e => this.allEmails = e)
+
+        eventBus.on('filterByTxt', this.filterByTxt)
+        eventBus.on('addToDrafts', this.addToDrafts)
+        eventBus.on('addEmail', this.addEmail)
+        eventBus.on('renderSent', this.renderSent)
+        eventBus.on('renderStars', this.renderStars)
+        eventBus.on('addToStars', this.addToStars)
+        //eventBus.on('updateAllEmails', this.updateAllEmails)
     },
     components: {
         emailFilter,

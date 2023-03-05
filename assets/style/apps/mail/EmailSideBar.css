@@ -1,4 +1,4 @@
-.email-sidebar-container button {
+.email-sidebar-sidebtn button {
     display: flex;
     border: none;
     font-size: .875rem;
@@ -7,11 +7,11 @@
     text-align: center;
     justify-content: space-around;
     padding: 0 24px 0 0;
-    width: 142px;
+    width: 162px;
     height: 56px;
     align-items: center;
     vertical-align: middle;
-    background-color: rgb(246, 248, 252);   
+    background-color: rgb(246, 248, 252);
 }
 
 .email-sidebar-container button:hover {
@@ -22,10 +22,14 @@
 
 .email-sidebar-search-menu {
     display: flex;
+    gap: 15px;
+    margin-top: 60px;
+    margin-left: 30px;
 }
 
 .email-sidebar-search-menu img {
-    height: 20px;
+    height: 40px;
+    margin-left: 20px;
 }
 
 .email-sidebar-compose, .email-sidebar-sidebtn {
@@ -38,8 +42,20 @@
 
 .email-sidebar-search-btn {
     cursor: pointer;
+    height: 20px;
+    width: 20px;
 }
 
 .email-sidebar-sidebtn button {
     background-color: rgb(234, 240, 250);
+}
+
+.email-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.email-sidebar-search-menu h1 {
+    font-size: 40px;
 }

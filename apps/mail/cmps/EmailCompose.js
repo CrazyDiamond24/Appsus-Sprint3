@@ -1,3 +1,4 @@
+/* imports */
 import { emailService } from './../services/email.service.js'
 import { eventBus } from './../../../services/event-bus.service.js'
 import { svgService } from './../services/svg.service.js'
@@ -7,13 +8,12 @@ export default {
     template: `
     <button class="email-compose-btn" @click="openModal" v-html="getSvg('compose_edit')"></button>
     <form class="email-compose-container" v-show='this.isActivated'>
-        <header>New Message <div class="email-compose-close" @click="addToDrafts">x</div></header>
+        <header>New Message <div class="email-compose-close" @click="addToDrafts" v-html="getSvg('close')"></div></header>
         <div class="email-compose-body">
             <input type="email" placeholder="To" v-model="newEmail.to">
             <input type="text" placeholder="Subject" v-model="newEmail.subject">
-            <!--<input type="text" v-model="newEmail.body" class="email-compose-body-input">-->
             <textarea v-model="newEmail.body" class="email-compose-body-textarea"></textarea>
-            <button @click="addMail" class="email-compose-send-btn">Send</button>
+            <button @click="checkCompose" class="email-compose-send-btn">Send</button>
         </div>
     </form>
     `,
@@ -28,7 +28,8 @@ export default {
             this.closeModal()
             this.newEmail.isDraft = true
             this.addEmail()
-            this.$emit('addToDrafts')
+            //this.$emit('addToDrafts', this.newEmail)
+            eventBus.emit('addToDrafts')
         },
         checkCompose() {
             if (!this.newEmail.to) {
@@ -40,7 +41,7 @@ export default {
                 if(!boolSend) return
                 else {
                     this.newEmail.subject = '(no subject)'
-                    this.addMail()
+                    this.sendEmail()
                 }
             }
         },
@@ -52,8 +53,16 @@ export default {
             this.isActivated = false
         },
         addEmail(){
-            console.log('addEmail SIDE BAR')
-            this.$emit('addEmail', this.email)
+            console.log('addEmail SIDE BAR ')
+            //this.$emit('addEmail', this.email)
+            eventBus.emit('addEmail', this.newEmail)
+        },
+        sendEmail() {
+            this.closeModal()
+            this.newEmail.isSent = true
+            this.newEmail.isRead = false
+            this.newEmail.sentAt = Date.now()
+            this.addEmail()
         },
         setNewEmptyEmail() {
             this.newEmail = emailService.getEmptyEmail()
@@ -71,7 +80,8 @@ export default {
             this.NewEmail = emailService.getEmptyEmail()
         },
         getSvg(iconName) {
-            return svgService.getSvg(iconName) + ' Compose'
+            if(iconName === 'compose_edit') return svgService.getSvg(iconName) + ' Compose'
+            return svgService.getSvg(iconName)
         },
     },
 }

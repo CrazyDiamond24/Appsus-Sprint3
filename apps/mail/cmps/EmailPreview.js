@@ -1,7 +1,8 @@
-import { eventBus } from './../../../services/event-bus.service.js'
+/* imports */
 import { emailService } from './../services/email.service.js'
 import { svgService } from '../services/svg.service.js'
 import { i18Service } from './../../../services/i18n.service.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 
 export default {
     name: 'emailPreview',
@@ -9,7 +10,7 @@ export default {
     template: `
         <div class="email-preview-container" @click="setDetails(this.email)" :class="{isRead:!email.isRead}">
             <input type="checkbox" class="email-preview-checkbox"/>
-            <i :key="email.id" :style="styleStar" class="check-star" v-html="getSvg('star')" @click="addToStars(this.email)"></i>
+            <i :key="email.id" :style="styleStar" class="check-star" v-html="getSvg('star')" @click="orgStars"></i>
             <p class="email-preview from">{{email.from}}</p>
             <div class="prev">
                 <p class="email-preview subject">{{email.subject}}</p>
@@ -68,14 +69,19 @@ export default {
             emailService.remove(id)
             //add to trash
         },
-        addToStars(email){
-            console.log('EmailPreview: addToStars')
-            this.styleStar.fill = 'rgb(255, 191, 14)'
-            emailService.addToStars(email)
-        },
         /*******************************NEW ADDS */
-        addToStars(){
-            this.$emit('addToStars')
+        orgStars(){
+            if(this.email.isStar){
+                this.email.isStar = false
+                eventBus.emit('removeFromStars')
+                this.styleStar.fill = null
+                eventBus.emit('addToStars')
+            } else {
+                this.email.isStar = true
+                eventBus.emit('addToStars')
+                this.styleStar.fill = 'gold'
+            }
+            
         },
     },
     components: {

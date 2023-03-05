@@ -687,8 +687,11 @@ function _createEmail(){
 
 
 function saveEmail(email, append = true) {
-    if (email.id) return storageService.put(EMAIL_STORAGE_KEY, email)
-    else return storageService.post(EMAIL_STORAGE_KEY, email, append)
+    console.log('saveEmail service: ')
+    console.dir(email)
+    /*if (email.id) return storageService.put(EMAIL_STORAGE_KEY, email)
+    else return storageService.post(EMAIL_STORAGE_KEY, email, append)*/
+    return storageService.post(EMAIL_STORAGE_KEY, email)
 }
 
 function getEmptyEmail() {

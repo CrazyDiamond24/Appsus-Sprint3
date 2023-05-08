@@ -1,4 +1,4 @@
-# AppSus
+<h1 align="center">AppSus</h1>
 
 AppSus is a responsive web application built in Vue.js, that consists of two main apps: a Notes app and a Mail app. This project was developed by a team of two as part of their learning journey at Coding Academy. 
 
@@ -8,7 +8,10 @@ Additionally, I was responsible for the UX/UI design of most of the other pages,
 
 Demo: https://crazydiamond24.github.io/Appsus-Sprint3
 
-![Demo](https://www.imagehost.at/images/2023/05/08/smartmockups_lhf2kzxn-removebg-preview.png)
+<p align="center">
+  <img src="https://www.imagehost.at/images/2023/05/08/smartmockups_lhf2kzxn-removebg-preview.png" alt="Demo">
+</p>
+
 
 
 

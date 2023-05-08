@@ -27,23 +27,24 @@ Here are some screenshots of the application:
 
 The home page is where you can navigate between the two apps. It features AI images of, well, horses (susim) using the app in Van Gogh style, and a clean design with a color scheme that's easy on the eyes.
 
-![Home Page](https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190508.png)
+<img src="https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190508.png" alt="Home Page" width="700">
 
 ### Notes App
 
 This is the app that I focused on. 
 
-![Notes App](https://www.imagehost.at/images/2023/05/08/hover.jpg)
+<img src="https://www.imagehost.at/images/2023/05/08/hover.jpg" alt="Notes App" width="700">
 
 ### Note Preview
 
 This is what a note looks like when you click on it. Here you can edit the contents. 
 
-![Note Preview](https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190706.png)
+<img src="https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190706.png" alt="Note Preview" width="700">
 
 ### About Page
 
 The About page provides some information about the team members. :-) 
 
-![About Page](https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190555.png)
+<img src="https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190555.png" alt="About Page" width="700">
+
 

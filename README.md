@@ -17,7 +17,7 @@ Demo: https://crazydiamond24.github.io/Appsus-Sprint3
 
 ## Technologies Used
 
-The AppSus project was built using Vue.js, Pure CSS, and HTML. 
+The AppSus project was built using Vue.js, Pure CSS, HTML, and SVG.
 
 ## Screenshots
 

@@ -9,9 +9,8 @@ Additionally, I was responsible for the UX/UI design of most of the other pages,
 Demo: https://crazydiamond24.github.io/Appsus-Sprint3
 
 <p align="center">
-  <img src="https://www.imagehost.at/images/2023/05/08/smartmockups_lhf2kzxn-removebg-preview.png" alt="Demo">
+  <img src="https://i.ibb.co/Kmk3011/smartmockups-lhf2kzxn-removebg-preview.png" alt="Demo">
 </p>
-
 
 
 

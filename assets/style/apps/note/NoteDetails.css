@@ -20,7 +20,7 @@
     z-index: 5;
   }
 
-  .modal {
+  .note-modal {
     position: relative;
     z-index: 50;
     background-color: white;
@@ -56,7 +56,7 @@
 
 
   @media only screen and (max-width: 600px) {
-    .modal {
+    .note-modal {
       max-width: 80%;
       padding: 0.5rem;
       border-radius: 0.3rem;

@@ -1,4 +1,5 @@
 .book-edit {
+  width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +16,7 @@
   }
   
   .book-edit form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +25,7 @@
   
   .book-edit input[type="text"],
   input[type="number"] {
+    width: 80%;
     margin: 1rem 0;
     padding: 1rem;
     font-size: 1.2rem;

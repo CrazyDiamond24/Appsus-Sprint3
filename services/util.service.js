@@ -7,6 +7,7 @@ export const utilService = {
     makeLorem,
     randStatus,
     getPriceDisplay,
+    getRandomIntInclusive,
 }
 
 
@@ -69,17 +70,33 @@ function randStatus(){
 }
 
 
-
 function getPriceDisplay(listPrice) {
   const symbol = {
     USD: '$',
     EUR: '€',
     ILS: '₪',
+  };
+
+  if (typeof listPrice === 'number') {
+    const currencyCode = 'USD'; // Assuming the default currency is USD
+    const price = listPrice;
+    const currencySymbol = symbol[currencyCode];
+    const formattedPrice = (currencySymbol ? currencySymbol : '') + price;
+
+    return formattedPrice;
   }
 
-  const price = listPrice.amount
-  const currencyCode = symbol[listPrice.currencyCode]
-  const priceStr = (currencyCode ? currencyCode : '') + price
+  const price = listPrice.amount;
+  const currencyCode = listPrice.currencyCode;
+  const currencySymbol = symbol[currencyCode];
+  const formattedPrice = (currencySymbol ? currencySymbol : '') + price;
 
-  return priceStr
+  return formattedPrice;
+}
+
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

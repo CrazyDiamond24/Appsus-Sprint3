@@ -1,7 +1,7 @@
 export default {
   template: `
   <section class="book-filter">
-    <input v-model="filterBy.title" @input="filter" placeholder="Search" type="text" />
+    <input v-model="filterBy.title" @input="filter" placeholder="Search books..." type="text" />
     <label for="min-price">Min Price:</label>
     <input
       id="min-price"

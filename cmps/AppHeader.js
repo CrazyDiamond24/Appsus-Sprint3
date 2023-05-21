@@ -14,8 +14,8 @@ export default {
       routes: [
         { path: '/', title: 'Home' },
         { path: '/notes', title: 'Notes' },
-        { path: '/email/list', title: 'E-mail' },
         { path: '/book', title: 'Books' },
+        { path: '/email/list', title: 'E-mail' },
         { path: '/about', title: 'About' },
       ],
     }

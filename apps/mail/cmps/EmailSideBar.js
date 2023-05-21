@@ -11,7 +11,7 @@ export default {
             <header class="email-sidebar-header">
                 <article class="email-sidebar-search-menu">
                     <i class="email-sidebar-search-btn" v-html="getSvgMenu('menu')" @click="showFullMenu=!showFullMenu"></i>
-                    <img src="./../../../assets/img/logo.png">
+                    <img src="https://www.logo.wine/a/logo/Gmail/Gmail-Logo.wine.svg">
                     <h1>Mail</h1>
                 </article>
         </section>

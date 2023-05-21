@@ -15,7 +15,7 @@ export default {
             <BookFilter @filter="setFilterBy"/>
 			<RouterLink to="/book/add" class="book-nav">
         <button title="Go To Search" class="btn-search-toggle" @click="onSearch = !onSearch">
-         Google Search
+         Find Books on Google
         </button>
         </RouterLink>
             <BookList 

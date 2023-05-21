@@ -2,7 +2,7 @@
 
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
-// import { eventBusService } from '../../../services/event-bus.service.js'
+import { eventBus } from './../../../services/event-bus.service.js'
 
 const BOOK_KEY = 'bookDB'
 
@@ -70,7 +70,12 @@ function removeReview(bookId, reviewId) {
 }
 
 function getEmptyBook(title = '', price = 0) {
-  return { id: '', title, price }
+  return {
+    id: '',
+    title,
+    price,
+    thumbnail: 'https://scorpiobooks.co.nz/wp-content/uploads/2022/09/websitecoverplaceholder.jpg'
+  };
 }
 
 function searchBook(searchTerm) {
@@ -118,7 +123,7 @@ function addGoogleBook(book) {
   }
   return storageService.post(BOOK_KEY, newBook).then((book) => {
     console.log('New book added:', book)
-    eventBusService.emit('added', book)
+    eventBus.emit('added', book)
     return book
   })
 }
@@ -129,7 +134,7 @@ function _createBook(title, price = 50) {
   return book
 }
 
-function _createBooks() {
+async function _createBooks() {
   let books = utilService.loadFromStorage(BOOK_KEY)
   if (!books || !books.length) {
     books = [
@@ -143,7 +148,7 @@ function _createBooks() {
           'placerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdumplacerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdumplacerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdumplacerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdumplacerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdumplacerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdum ad dictum platea vehicula conubia fermentum habitasse congue suspendisse',
         pageCount: 713,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/20.jpg',
+        thumbnail: 'https://cdn.vox-cdn.com/thumbor/p-gGrwlaU4rLikEAgYhupMUhIJc=/0x0:1650x2475/1200x0/filters:focal(0x0:1650x2475):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/13757614/817BsplxI9L.jpg',
         language: 'en',
         listPrice: {
           amount: 109,
@@ -161,7 +166,7 @@ function _createBooks() {
           'aliquam pretium lorem laoreet etiam odio cubilia iaculis placerat aliquam tempor nisl auctor',
         pageCount: 129,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/14.jpg',
+        thumbnail: 'https://kbimages1-a.akamaihd.net/36bf2fd6-517b-4412-9621-8e0ccc5caf0f/1200/1200/False/notes-from-underground-8.jpg',
         language: 'sp',
         listPrice: {
           amount: 44,
@@ -179,7 +184,7 @@ function _createBooks() {
           'lorem molestie ut euismod ad quis mi ultricies nisl cursus suspendisse dui tempor sit suscipit metus etiam euismod tortor sagittis habitant',
         pageCount: 972,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/2.jpg',
+        thumbnail: 'https://rivetedlit.b-cdn.net/wp-content/uploads/2020/01/all-this-time-9781534466340_xlg.jpg',
         language: 'he',
         listPrice: {
           amount: 108,
@@ -198,7 +203,7 @@ function _createBooks() {
           'interdum inceptos mauris habitant primis neque tempus lacus morbi auctor cras consectetur euismod vehicula neque netus enim vivamus augue molestie imperdiet tincidunt aliquam',
         pageCount: 303,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/16.jpg',
+        thumbnail: 'https://cdn.zoella.co.uk/wp-content/uploads/2022/04/13161426/Anne-of-Green-Gables-by-L.M.-Montgomery--940x1316.jpeg',
         language: 'en',
         listPrice: {
           amount: 30,
@@ -216,7 +221,7 @@ function _createBooks() {
           'et vehicula faucibus amet accumsan lectus cras nulla cubilia arcu neque litora mi habitasse quis amet augue facilisis sed',
         pageCount: 337,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/12.jpg',
+        thumbnail: 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781607102113/the-adventures-of-sherlock-holmes-and-other-stories-9781607102113_hr.jpg',
         language: 'sp',
         listPrice: {
           amount: 19,
@@ -235,7 +240,7 @@ function _createBooks() {
           'senectus habitant nam imperdiet nostra elit dapibus nisl adipiscing in',
         pageCount: 748,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/1.jpg',
+        thumbnail: 'https://cdn.shopify.com/s/files/1/0011/6519/7378/products/IMG-6137_7ccee9b2-ce14-4462-9399-8bf5d7ec68be_600x.jpg?v=1651230340',
         language: 'en',
         listPrice: {
           amount: 91,
@@ -254,7 +259,7 @@ function _createBooks() {
           'nec scelerisque id cursus platea sit ullamcorper bibendum ultrices tempus ante mi aliquet cras tortor dapibus dictum scelerisque',
         pageCount: 65,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/14.jpg',
+        thumbnail: 'https://mpd-biblio-covers.imgix.net/9780805093391.jpg',
         language: 'he',
         listPrice: {
           amount: 90,
@@ -272,7 +277,7 @@ function _createBooks() {
           'magna quisque venenatis laoreet purus in semper habitant proin pellentesque sed egestas cursus faucibus nam enim id sit mi ligula risus curabitur senectus curabitur sodales fames sem',
         pageCount: 299,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/11.jpg',
+        thumbnail: 'https://s26162.pcdn.co/wp-content/uploads/2018/02/gatsby-original2.jpg',
         language: 'he',
         listPrice: {
           amount: 176,
@@ -291,7 +296,7 @@ function _createBooks() {
           'porttitor nisl sodales id eu tellus venenatis laoreet auctor dictumst nulla',
         pageCount: 803,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/10.jpg',
+        thumbnail: 'https://shereads.com/wp-content/uploads/2021/10/TheFirekeepersDaughter_AngelineBoulley-800x1208.jpg',
         language: 'sp',
         listPrice: {
           amount: 116,
@@ -310,7 +315,7 @@ function _createBooks() {
           'curabitur bibendum in dolor neque magna phasellus arcu nulla cubilia senectus maecenas ullamcorper neque accumsan facilisis dictumst ornare',
         pageCount: 891,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/5.jpg',
+        thumbnail: 'https://m.media-amazon.com/images/I/71CkAJOxkrL._AC_UF1000,1000_QL80_.jpg',
         language: 'en',
         listPrice: {
           amount: 145,
@@ -328,7 +333,7 @@ function _createBooks() {
           'auctor amet nostra luctus molestie proin platea cubilia netus sed purus egestas a primis eu tristique interdum litora lorem venenatis mattis senectus',
         pageCount: 86,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/16.jpg',
+        thumbnail: 'https://m.media-amazon.com/images/I/51pPe1mxKsL._AC_UF1000,1000_QL80_.jpg',
         language: 'sp',
         listPrice: {
           amount: 157,
@@ -346,7 +351,7 @@ function _createBooks() {
           'aenean mauris porta netus accumsan turpis etiam vestibulum vivamus sagittis nullam nec tellus quam mattis est pellentesque nisi litora sit ad',
         pageCount: 882,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/17.jpg',
+        thumbnail: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/romantic-poetry-book-cover-design-template-cb700ec0a42a3219c1df0413f6587523_screen.jpg?ts=1637016013',
         language: 'sp',
         listPrice: {
           amount: 57,
@@ -364,7 +369,7 @@ function _createBooks() {
           'nec faucibus arcu suspendisse tempus potenti lobortis aliquam quisque augue integer consectetur etiam ultrices curabitur tristique metus',
         pageCount: 598,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/8.jpg',
+        thumbnail: 'https://www.writersdigest.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTcxMDY0MzgwMjEwNjE5NjUz/image-placeholder-title.jpg',
         language: 'en',
         listPrice: {
           amount: 167,
@@ -382,7 +387,7 @@ function _createBooks() {
           'etiam nec aliquam euismod platea vel laoreet quisque condimentum sapien neque ut aliquam torquent in nam',
         pageCount: 608,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/3.jpg',
+        thumbnail: 'https://m.media-amazon.com/images/I/71rtzg36RAL._AC_UF1000,1000_QL80_.jpg',
         language: 'he',
         listPrice: {
           amount: 150,
@@ -400,7 +405,7 @@ function _createBooks() {
           'etiam pretium urna fusce lobortis curae viverra aptent metus semper nisi litora feugiat elementum purus nunc consequat lorem ultricies non primis phasellus sociosqu donec dolor',
         pageCount: 583,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/6.jpg',
+        thumbnail: 'https://cdn.fable.co/covers/9781510768192.jpg',
         language: 'en',
         listPrice: {
           amount: 58,
@@ -419,7 +424,7 @@ function _createBooks() {
           'dolor morbi malesuada eleifend purus taciti sit interdum aliquet commodo ut libero tincidunt',
         pageCount: 497,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/7.jpg',
+        thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/b164aa10953207.560ef1bcba0e7.jpg',
         language: 'en',
         listPrice: {
           amount: 78,
@@ -438,7 +443,7 @@ function _createBooks() {
           'rhoncus odio netus consectetur aenean hendrerit massa scelerisque elementum aptent lobortis pharetra maecenas quam nulla volutpat turpis non habitasse aenean ante sodales lobortis quisque libero imperdiet gravida eleifend nulla',
         pageCount: 804,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/10.jpg',
+        thumbnail: 'https://img0-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/22739/optimized_large_thumb_children-stories-book-cover-541__1_.jpg',
         language: 'en',
         listPrice: {
           amount: 118,
@@ -456,7 +461,7 @@ function _createBooks() {
           'himenaeos quis iaculis orci libero egestas quam varius primis erat lacus facilisis blandit dictum tristique interdum litora quisque purus senectus pretium purus',
         pageCount: 231,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/12.jpg',
+        thumbnail: 'https://static-cse.canva.com/blob/921489/RedandBeigeCuteIllustrationYoungAdultBookCover.jpg',
         language: 'he',
         listPrice: {
           amount: 60,
@@ -475,7 +480,7 @@ function _createBooks() {
           'torquent in et id lacus vivamus aptent cursus erat integer venenatis risus ac ante quam etiam euismod feugiat risus suscipit rhoncus pharetra quisque felis',
         pageCount: 652,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/20.jpg',
+        thumbnail: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2018%2F03%2Fa-clockwork-orange-2000.jpg',
         language: 'he',
         listPrice: {
           amount: 110,
@@ -494,7 +499,7 @@ function _createBooks() {
           'aliquet euismod mi vivamus bibendum donec etiam quisque iaculis ullamcorper est sed',
         pageCount: 904,
         categories: ['Computers', 'Hack'],
-        thumbnail: 'http://coding-academy.org/books-photos/2.jpg',
+        thumbnail: 'https://marketplace.canva.com/EAE7-oQF8qg/1/0/1003w/canva-purple-feminine-love-story-novel-book-cover-7RKHodr01_c.jpg',
         language: 'sp',
         listPrice: {
           amount: 186,
@@ -504,7 +509,7 @@ function _createBooks() {
       },
     ]
 
-    utilService.saveToStorage(BOOK_KEY, books)
+    utilService.saveToStorage(BOOK_KEY, books);
   }
   return books
 }

@@ -6,7 +6,7 @@ export default {
   template: `
   <div class="modal-wrapper">
     <div class="modal-backdrop"></div>
-    <div class="modal">
+    <div class="note-modal">
       <h2>Click text to edit</h2>
       <section>
       

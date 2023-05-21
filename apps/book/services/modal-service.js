@@ -4,10 +4,10 @@ export const modalService = {
 
 function toggleModal(state, elModal) {
     if (state) {
-        elModal.classList.value = 'modal fade-in'
-        document.body.classList.add('modal-open')
+        elModal.classList.value = 'book-modal fade-in'
+        document.body.classList.add('book-modal-open')
     } else {
-        elModal.classList.value = 'modal fade-out'
-        document.body.classList.remove('modal-open')
+        elModal.classList.value = 'book-modal fade-out'
+        document.body.classList.remove('book-modal-open')
     }
 }

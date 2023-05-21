@@ -17,9 +17,6 @@ export default {
 
     `,
 	methods: {
-		// remove(bookId) {
-		// 	this.$emit('remove', bookId)
-		// },
 		showDetails(bookId) {
 			this.$emit('show-details', bookId)
 		},
@@ -28,13 +25,3 @@ export default {
 		BookPreview,
 	},
 }
-
-
-
-// <!-- <ul class="book-list">
-// <li v-for="book in books">
-// 	<BookPreview/>
-// 	<button @click="removeBook1('book.id')">remove</button>
-// </li>
-
-// </ul> -->

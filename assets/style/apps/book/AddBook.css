@@ -1,0 +1,112 @@
+.add-book {
+    background-color: #F5F7FA;
+}
+
+
+.input-container {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    background-color: #FFF;
+}
+
+.input-container input {
+    width: 50%;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    padding: 5px;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+}
+
+.input-container button {
+    width:200px;
+    padding: 5px 10px;
+    background-color: #4285F4;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+    background-color: #2A75F3;
+}
+
+.book-modal-container {
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+}
+.book-modal {
+    max-height: 77vh;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 5px;
+    z-index: 11;
+    opacity: 0;
+   width: 1200px;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.book-modal.fade-in {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.res-list {
+    list-style: none;
+    
+   
+}
+
+.res-list li {
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #DDD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.res-list p {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+}
+
+.btn-add-book {
+    padding: 5px 10px;
+    background-color: #28A745;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.book-cover-google{
+    width: 100px;
+}
+.book-title-google{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.book-details-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.btn-add-book:hover {
+    background-color: #218838;
+}

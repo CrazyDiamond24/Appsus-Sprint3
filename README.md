@@ -9,7 +9,7 @@ Additionally, I was responsible for the UX/UI design of most of the other pages,
 Demo: https://crazydiamond24.github.io/Appsus-Sprint3
 
 <p align="center">
-  <img src="https://i.ibb.co/Kmk3011/smartmockups-lhf2kzxn-removebg-preview.png" alt="Demo">
+  <img src="https://i.postimg.cc/fbb718DL/smartmockups-lhf2kzxn-removebg-preview.png" alt="Demo">
 </p>
 
 
@@ -26,24 +26,24 @@ Here are some screenshots of the application:
 
 The home page is where you can navigate between the two apps. It features AI images of, well, horses (susim) using the app in Van Gogh style, and a clean design with a color scheme that's easy on the eyes.
 
-<img src="https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190508.png" alt="Home Page" width="700">
+<img src="https://i.postimg.cc/NMBtg2C5/Screenshot-2023-05-08-190508.png" alt="Home Page" width="700">
 
 ### Notes App
 
 This is the app that I focused on. 
 
-<img src="https://www.imagehost.at/images/2023/05/08/hover.jpg" alt="Notes App" width="700">
+<img src="https://i.postimg.cc/85DKFRSg/hover.jpg" alt="Notes App" width="700">
 
 ### Note Preview
 
 This is what a note looks like when you click on it. Here you can edit the contents. 
 
-<img src="https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190706.png" alt="Note Preview" width="700">
+<img src="https://i.postimg.cc/9Xg6kk24/Screenshot-2023-05-08-190706.png" alt="Note Preview" width="700">
 
 ### About Page
 
 The About page provides some information about the team members. :-) 
 
-<img src="https://www.imagehost.at/images/2023/05/08/Screenshot-2023-05-08-190555.png" alt="About Page" width="700">
+<img src="https://i.postimg.cc/bvRM9CLw/Screenshot-2023-05-08-190555.png" alt="About Page" width="700">
 
 

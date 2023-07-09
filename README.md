@@ -1,5 +1,11 @@
 <h1 align="center">AppSus</h1>
+<div align="center">
+  <tr align="center">
+    <td align="center" >
 
+      🟢Vue.js | 🖌️Pure CSS | 💻HTML | 📐SVG | 🔄Dynamic Components | 🚎Event Bus
+  </tr>
+  </div>
 AppSus is a responsive web application built in Vue.js using standalone syntax, that consists of two main apps: a Notes app and a Mail app. This project was developed by a team of two as part of their learning journey at Coding Academy. 
 
 I took the lead on the development of the Notes app, which is inspired by Google Keep. It allows users to take notes, create to-do lists, upload images, and add video notes. The app features all CRUD operations, whereg you can add, edit, delete, and search for notes.

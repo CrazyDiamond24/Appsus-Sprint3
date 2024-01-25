@@ -46,7 +46,7 @@ function _createNotes() {
           backgroundColor: '#d7aefb', //purple
         },
         info: {
-          url: 'https://usaupload.com/cache/plugins/filepreviewer/643081/bf0806adf6f3889005d1142caad14f325c97027d00a160beec3bf0bb20cc0e9a/1100x800_cropped.jpg?fbclid=IwAR1TqP5pbvOr4Y8OLnqSF7puJu6Xk8A8rsYxUBFB1ThdGg_IhM5A20gzzek',
+          url: 'https://crazydiamond24.github.io/myDrawings/img/1.jpg',
           title: 'My Drawing',
         },
       },
